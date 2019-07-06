@@ -18,13 +18,12 @@ public class HazelcastUtility {
     private Logger logger = LoggerFactory.getLogger(this.getClass());
     private final DatabaseService databaseService;
     private final IMap<Long, Firma> mapOfFirma;
-    private final IList<Firma> listOfFirma;
 
     @Autowired
-    public HazelcastUtility(DatabaseService databaseService, IMap<Long, Firma> mapOfFirma, IList<Firma> listOfFirmat) {
+    public HazelcastUtility(DatabaseService databaseService, IMap<Long, Firma> mapOfFirma) {
         this.databaseService = databaseService;
         this.mapOfFirma = mapOfFirma;
-        this.listOfFirma = listOfFirmat;
+
     }
 
     public Firma saveOrUpdate(Firma firma) throws Exception {
@@ -35,18 +34,18 @@ public class HazelcastUtility {
     }
 
     public void deleteFirma(long idFirma) throws Exception {
-        Firma firma = mapOfFirma.get(idFirma);
+       /* Firma firma = mapOfFirma.get(idFirma);   null olmag ehtimalini service-in icinde yoxluyuruq ikince defe yoxlamaga ehtiyac yoxtu
         if (firma == null) {
-
             firma = databaseService.getFirma(idFirma);
-        }
+        }*/
+        Firma firma = getFirma(idFirma);
         firma.setIsActive(0);
         databaseService.insertOrUpdate(firma);
         mapOfFirma.remove(firma.getIdFirma());
     }
 
     public IMap<Long, Firma> getMapOfFirma() {
-        if (mapOfFirma.isEmpty()) {
+        if (mapOfFirma == null || mapOfFirma.isEmpty()) {
             logger.info("\n→→→mapOfFirma was empty therefore trying to cache\n\n");
             startCaching();
         }
@@ -54,7 +53,7 @@ public class HazelcastUtility {
         return mapOfFirma;
     }
 
-    public IList<Firma> getListOfFirma() {
+    /*public IList<Firma> getListOfFirma() {
         if (listOfFirma.isEmpty()) {
             logger.info("\n→→→listOfFirma was empty therefore trying to cache\n\n");
             startCaching();
@@ -62,7 +61,7 @@ public class HazelcastUtility {
         logger.info("\n→→→HAZEL: got listOfFirma.size(): {}\n\n", listOfFirma.size());
         return listOfFirma;
     }
-
+*/
     public Firma getFirma(long idFirma) {
         logger.info("\n→→→HAZEL: trying to get idFirma from hazelcast\n\n");
         Firma firma = mapOfFirma.get(idFirma);
@@ -86,17 +85,14 @@ public class HazelcastUtility {
 
     private void startCaching() {
         try {
-            listOfFirma.clear();
             mapOfFirma.clear();
             List<Firma> listOfFirmaFromDB = databaseService.getAll();
-            logger.info("\n→→→HAZEL: got listOfEmeliyatFromDB.size(): {}\n\n", listOfFirmaFromDB.size());
-            if (!listOfFirmaFromDB.isEmpty()) {
+            logger.info("\n→→→HAZEL: got listOfFirmaFromDB.size(): {}\n\n", listOfFirmaFromDB.size());
+            if ( !listOfFirmaFromDB.isEmpty()) {
                 for (Firma firma : listOfFirmaFromDB) {
                     mapOfFirma.put(firma.getIdFirma(), firma);
                 }
-                listOfFirma.addAll(listOfFirmaFromDB);
             }
-
         } catch (Exception e) {
             logger.error("\n→→→HAZEL: error caching e: {}, e: {}\n\n", e, e);
         }

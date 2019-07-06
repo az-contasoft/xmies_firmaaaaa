@@ -24,6 +24,7 @@ public class DatabaseService {
         Firma firmaForDB;
         if(firma.getIdFirma()>0){
             firmaForDB = repoFirma.findByIdFirmaAndIsActive(firma.getIdFirma(),1);
+
             logger.info("{}","Firma found and trying to update");
             firmaForDB.setIsActive(firma.getIsActive());
             firmaForDB.setAddress(firma.getAddress());

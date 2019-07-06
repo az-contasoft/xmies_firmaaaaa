@@ -26,9 +26,4 @@ public class HazelcastConfiguration {
     public IMap<Long, Firma> mapOfFirma(HazelcastInstance instance){
         return instance.getMap("mapOfFirma");
     }
-
-    @Bean
-    public IList<Firma> listOfFirma(HazelcastInstance instance) {
-        return instance.getList("listOfFirma");
-    }
 }

@@ -59,8 +59,7 @@ public class Firma implements Serializable {
         this.isActive = isActive;
     }
 
-    public Firma(long idFirma, String adi, String address, String telefon, int isActive) {
-        this.idFirma = idFirma;
+    public Firma(String adi, String address, String telefon, int isActive) {
         this.adi = adi;
         this.address = address;
         this.telefon = telefon;

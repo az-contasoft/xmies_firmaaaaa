@@ -10,7 +10,5 @@ public interface RepoFirma extends JpaRepository<Firma,Long> {
 
     Firma findByIdFirmaAndIsActive(long idFirma, int isActive);
     List<Firma> findAllByIsActiveOrderByIdFirmaDesc(int isActive);
-//    List<Firma> findAllByIsActive(int isActive);
-//    List<Firma> findAllByAdiAndIsActive(String adi,int isActive);
-//    Firma findByAdi(String adi);
+
 }
