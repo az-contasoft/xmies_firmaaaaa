@@ -24,11 +24,11 @@ public class FirmaSearchService {
     public ResponseEntity<IMap<Long,Firma>> getAll() {
         try{
             IMap<Long,Firma> mapOfFirma = hazelcastUtility.getMapOfFirma();
-            if(mapOfFirma==null||mapOfFirma.isEmpty()){
+            if(mapOfFirma==null || mapOfFirma.isEmpty()){
                 logger.info("\n→→→SEARCH_SERVICE: firma map not found\n\n");
                 return new ResponseEntity<>(null,HttpStatus.NO_CONTENT);
             }else {
-                logger.info("\n→→→SEARCH_SERVICE: mapOfEmeliyat size: {}\n\n", mapOfFirma.size());
+                logger.info("\n→→→SEARCH_SERVICE: mapOfFirma size: {}\n\n", mapOfFirma.size());
                 return new ResponseEntity<>(mapOfFirma,HttpStatus.OK);
             }
         }catch (Exception e){
@@ -44,7 +44,7 @@ public class FirmaSearchService {
                 logger.info("\n→→→SEARCH_SERVICE: firma not found\n\n");
                 return new ResponseEntity<>(null,HttpStatus.NO_CONTENT);
             }else{
-                logger.info("\n→→→SEARCH_SERVICE: firma : {}\n\n", firma);
+                logger.info("\n→→→SEARCH_SERVICE: firma found : {}\n\n", firma);
                 return new ResponseEntity<>(firma,HttpStatus.OK);
             }
         }catch (Exception e){

@@ -38,7 +38,6 @@ public class FirmaCrudService {
             return new ResponseEntity<>(firma, HttpStatus.OK);
         } catch (Exception e) {
             logger.error("\n→→→CRUD_SERVICE: saving error e: {}, e: {}\n\n", e, e);
-
             return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
