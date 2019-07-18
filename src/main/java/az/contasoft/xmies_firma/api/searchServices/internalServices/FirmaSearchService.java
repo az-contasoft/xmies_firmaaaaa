@@ -52,4 +52,11 @@ public class FirmaSearchService {
             return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
+
+
+
+    public ResponseEntity<String> startCaching() {
+        hazelcastUtility.startCaching();
+        return new ResponseEntity<>("Cached", HttpStatus.OK);
+    }
 }

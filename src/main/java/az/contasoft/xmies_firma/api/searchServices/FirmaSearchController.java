@@ -23,15 +23,19 @@ public class FirmaSearchController {
         this.firmaSearchService = firmaSearchService;
     }
 
-    @GetMapping("/getAll")
+    @GetMapping("/list")
     public ResponseEntity<IMap<Long,Firma>> getAll(){
         logger.info("{}","getting all from hazelcast");
         return firmaSearchService.getAll();
     }
 
-    @GetMapping("/getFirma/{idFirma}")
+    @GetMapping("/byIdFirma/{idFirma}")
     public ResponseEntity<Firma> getFirma(@PathVariable("idFirma") long idFirma){
         logger.info("{}","getting firma by idFirma from hazelcast");
         return firmaSearchService.getFirma(idFirma);
+    }
+    @GetMapping("/cache")
+    public ResponseEntity<String> startCaching() {
+        return firmaSearchService.startCaching();
     }
 }

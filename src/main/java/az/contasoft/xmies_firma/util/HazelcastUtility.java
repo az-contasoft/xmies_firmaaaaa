@@ -63,7 +63,7 @@ public class HazelcastUtility {
     }
 */
     public Firma getFirma(long idFirma) {
-        logger.info("\n→→→HAZEL: trying to get idFirma from hazelcast\n\n");
+        logger.info("\n→→→HAZEL: trying to get Firma byIdFirma from hazelcast\n\n");
         Firma firma = mapOfFirma.get(idFirma);
         if (firma == null) {
             logger.info("\n→→→HAZEL: firma not found in hazelcast. trying to get from DB\n\n");
@@ -83,7 +83,7 @@ public class HazelcastUtility {
     }
 
 
-    private void startCaching() {
+    public void startCaching() {
         try {
             mapOfFirma.clear();
             List<Firma> listOfFirmaFromDB = databaseService.getAll();
@@ -101,6 +101,8 @@ public class HazelcastUtility {
     @PostConstruct
     public void init() {
         logger.info("\n→→→HAZEL: trying to init PostConstruct\n\n");
+        mapOfFirma.clear();
+        mapOfFirma.destroy();
         startCaching();
     }
 }
