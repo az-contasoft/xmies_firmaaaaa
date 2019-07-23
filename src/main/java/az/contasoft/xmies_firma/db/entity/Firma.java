@@ -11,7 +11,7 @@ public class Firma implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "firma", nullable = false, unique = true)
+    @Column(name = "idFirma", nullable = false, unique = true)
 
     private long idFirma;
     private String adi;
