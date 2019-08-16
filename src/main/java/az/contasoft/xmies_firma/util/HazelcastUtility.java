@@ -82,7 +82,6 @@ public class HazelcastUtility {
         return firma;
     }
 
-
     public void startCaching() {
         try {
             mapOfFirma.clear();

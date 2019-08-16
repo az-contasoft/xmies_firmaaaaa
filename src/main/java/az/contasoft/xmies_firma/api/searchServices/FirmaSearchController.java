@@ -11,6 +11,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.Map;
+
 @RestController
 @RequestMapping("/searchServices")
 public class FirmaSearchController {
@@ -37,5 +39,12 @@ public class FirmaSearchController {
     @GetMapping("/cache")
     public ResponseEntity<String> startCaching() {
         return firmaSearchService.startCaching();
+    }
+
+
+    @GetMapping("/byAdiTrim/{enteredText}")
+    public ResponseEntity<Map<Long,Firma>> getFirmaByAdiTrim(@PathVariable("enteredText") String enteredText){
+        logger.info("{}","getting firmaTrim by enteredText from hazelcast");
+        return firmaSearchService.getFirmaByNameTrim(enteredText);
     }
 }
