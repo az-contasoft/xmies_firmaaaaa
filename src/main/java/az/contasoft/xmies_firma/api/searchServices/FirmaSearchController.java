@@ -1,16 +1,15 @@
 package az.contasoft.xmies_firma.api.searchServices;
 
+import az.contasoft.xmies_firma.api.searchServices.internal.RequestText;
 import az.contasoft.xmies_firma.api.searchServices.internalServices.FirmaSearchService;
 import az.contasoft.xmies_firma.db.entity.Firma;
 import com.hazelcast.core.IMap;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
 import java.util.Map;
 
 @RestController
@@ -42,9 +41,9 @@ public class FirmaSearchController {
     }
 
 
-    @GetMapping("/byAdiTrim/{enteredText}")
-    public ResponseEntity<Map<Long,Firma>> getFirmaByAdiTrim(@PathVariable("enteredText") String enteredText){
+    @PostMapping("/byName")
+    public ResponseEntity<List<Firma>> getFirmaByAdi(@RequestBody RequestText requestText){
         logger.info("{}","getting firmaTrim by enteredText from hazelcast");
-        return firmaSearchService.getFirmaByNameTrim(enteredText);
+        return firmaSearchService.getFirmaByName(requestText);
     }
 }

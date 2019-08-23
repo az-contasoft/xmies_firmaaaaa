@@ -1,5 +1,6 @@
 package az.contasoft.xmies_firma.api.searchServices.internalServices;
 
+import az.contasoft.xmies_firma.api.searchServices.internal.RequestText;
 import az.contasoft.xmies_firma.db.entity.Firma;
 import az.contasoft.xmies_firma.util.HazelcastUtility;
 import com.hazelcast.core.IMap;
@@ -10,9 +11,11 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 @Component
 public class FirmaSearchService {
@@ -63,28 +66,38 @@ public class FirmaSearchService {
         return new ResponseEntity<>("Cached", HttpStatus.OK);
     }
 
-    public ResponseEntity<Map<Long, Firma>> getFirmaByNameTrim(String enteredText) {
+    public ResponseEntity<List<Firma>> getFirmaByName(RequestText requestText) {
         try {
-            Map<Long, Firma> map = hazelcastUtility.getMapOfFirma();
-            Map<Long, Firma> mapF = new HashMap<>();
-            String[] enteredTextMas = enteredText.trim().split(" ");
+            Map<Long, Firma> firmaMap = hazelcastUtility.getMapOfFirma();
+            String[] enteredTextMas = requestText.getEnteredText().split(" ");
 
-            for (String enteredTextmas : enteredTextMas) {
-                for (Firma firma : map.values()) {
-                    if (!enteredTextmas.equals(" ") && firma.getAdi().toLowerCase().contains(enteredTextmas.trim().toLowerCase())) {
-                        mapF.put(firma.getIdFirma(), firma);
+            for(String enteredTextmas : enteredTextMas){
+                Map<Long, Firma> yeniMap = new HashMap<>();
+                for(Firma firma : firmaMap.values()){
+                    if(firma.getAdi().toLowerCase().contains(enteredTextmas.trim().toLowerCase())){
+                        yeniMap.put(firma.getIdFirma(), firma);
                     }
                 }
-                map = mapF;
-            }
 
-            if(mapF == null || mapF.isEmpty()){
-                return new ResponseEntity<>(null, HttpStatus.NO_CONTENT);
+                firmaMap = yeniMap;
             }
-            return new ResponseEntity<>(map, HttpStatus.OK);
+            if(firmaMap == null || firmaMap.isEmpty()){
+                return new ResponseEntity<>(null,HttpStatus.NO_CONTENT);
+            }
+            List<Firma> resultList = new ArrayList<>();
+            for(Firma firma : firmaMap.values()){
+                resultList.add(firma);
+                if(resultList.size() == 10){
+                    return new ResponseEntity<>(resultList, HttpStatus.OK);
+                }
+            }
+            return new ResponseEntity<>(resultList, HttpStatus.OK);
+
         }catch (Exception e){
-            logger.error("\n→→→SEARCH_SERVICE: error getFirmaByNameTrim e: {}, e: {}\n\n", e, e);
+            logger.error("\n→→→SEARCH_SERVICE: error getFirmaByName e: {}, e: {}\n\n", e, e);
             return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
         }
+
+
     }
 }
