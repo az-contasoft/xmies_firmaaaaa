@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 import java.util.Map;
 
+
 @RestController
 @RequestMapping("/searchServices")
 public class FirmaSearchController {
@@ -25,7 +26,7 @@ public class FirmaSearchController {
     }
 
     @GetMapping("/list")
-    public ResponseEntity<IMap<Long,Firma>> getAll(){
+    public ResponseEntity<Map<Long,Firma>> getAll(){
         logger.info("{}","getting all from hazelcast");
         return firmaSearchService.getAll();
     }
@@ -35,6 +36,7 @@ public class FirmaSearchController {
         logger.info("{}","getting firma by idFirma from hazelcast");
         return firmaSearchService.getFirma(idFirma);
     }
+
     @GetMapping("/cache")
     public ResponseEntity<String> startCaching() {
         return firmaSearchService.startCaching();

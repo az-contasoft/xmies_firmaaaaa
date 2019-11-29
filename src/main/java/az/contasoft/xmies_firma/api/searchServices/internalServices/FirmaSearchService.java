@@ -28,7 +28,7 @@ public class FirmaSearchService {
         this.hazelcastUtility = hazelcastUtility;
     }
 
-    public ResponseEntity<IMap<Long, Firma>> getAll() {
+    public ResponseEntity<Map<Long, Firma>> getAll() {
         try {
             IMap<Long, Firma> mapOfFirma = hazelcastUtility.getMapOfFirma();
             if (mapOfFirma == null || mapOfFirma.isEmpty()) {
@@ -78,7 +78,6 @@ public class FirmaSearchService {
                         yeniMap.put(firma.getIdFirma(), firma);
                     }
                 }
-
                 firmaMap = yeniMap;
             }
             if(firmaMap == null || firmaMap.isEmpty()){
@@ -92,12 +91,10 @@ public class FirmaSearchService {
                 }
             }
             return new ResponseEntity<>(resultList, HttpStatus.OK);
-
         }catch (Exception e){
             logger.error("\n→→→SEARCH_SERVICE: error getFirmaByName e: {}, e: {}\n\n", e, e);
             return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
         }
-
 
     }
 }

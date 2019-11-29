@@ -1,599 +1,478 @@
-2019-06-28 08:57:53 [hz._hzInstance_1_dev.cached.thread-14] INFO  c.h.i.c.impl.ClusterHeartbeatManager - [192.168.100.163]:5701 [dev] [3.11.4] System clock apparently jumped from 2019-06-27 23:47:51.985 to 2019-06-28 08:57:53.588 since last heartbeat (+32996603 ms)
-2019-06-28 08:57:53 [hz._hzInstance_1_dev.InvocationMonitorThread] WARN  c.h.s.i.o.impl.InvocationMonitor - [192.168.100.163]:5701 [dev] [3.11.4] MonitorInvocationsTask delayed 33001278 ms
-2019-06-28 08:58:01 [hz._hzInstance_1_dev.InvocationMonitorThread] WARN  c.h.s.i.o.impl.InvocationMonitor - [192.168.100.163]:5701 [dev] [3.11.4] BroadcastOperationControlTask delayed 33002161 ms
-2019-06-28 08:58:01 [hz._hzInstance_1_dev.cached.thread-14] WARN  c.h.i.c.impl.ClusterHeartbeatManager - [192.168.100.163]:5701 [dev] [3.11.4] Resetting heartbeat timestamps because of huge system clock jump! Clock-Jump: 32996603 ms, Heartbeat-Timeout: 60000 ms
-2019-06-28 08:58:04 [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=12h10m46s190ms92µs900ns).
-2019-06-28 08:58:11 [hz._hzInstance_1_dev.HealthMonitor] INFO  c.h.i.diagnostics.HealthMonitor - [192.168.100.163]:5701 [dev] [3.11.4] processors=8, physical.memory.total=7.9G, physical.memory.free=1.8G, swap.space.total=17.1G, swap.space.free=5.5G, heap.memory.used=288.1M, heap.memory.free=330.9M, heap.memory.total=619.0M, heap.memory.max=1.8G, heap.memory.used/total=46.54%, heap.memory.used/max=16.03%, minor.gc.count=13, minor.gc.time=193ms, major.gc.count=3, major.gc.time=610ms, load.process=0.25%, load.system=98.22%, load.systemAverage=n/a thread.count=104, thread.peakCount=105, cluster.timeDiff=-45865516, event.q.size=0, executor.q.async.size=0, executor.q.client.size=0, executor.q.client.query.size=0, executor.q.client.blocking.size=0, executor.q.query.size=0, executor.q.scheduled.size=0, executor.q.io.size=0, executor.q.system.size=0, executor.q.operations.size=0, executor.q.priorityOperation.size=0, operations.completed.count=1, executor.q.mapLoad.size=0, executor.q.mapLoadAllKeys.size=0, executor.q.cluster.size=0, executor.q.response.size=0, operations.running.count=0, operations.pending.invocations.percentage=0.00%, operations.pending.invocations.count=0, proxy.count=0, clientEndpoint.count=0, connection.active.count=0, client.connection.count=0, connection.count=0
-2019-06-28 08:59:43 [hz._hzInstance_1_dev.IO.thread-in-0] INFO  c.hazelcast.nio.tcp.TcpIpConnection - [192.168.100.163]:5701 [dev] [3.11.4] Initialized new cluster connection between /192.168.200.121:60103 and /192.168.200.6:5701
-2019-06-28 08:59:43 [hz._hzInstance_1_dev.cached.thread-8] INFO  c.h.i.c.impl.ClusterJoinManager - [192.168.100.163]:5701 [dev] [3.11.4] We should merge to [192.168.200.6]:5701 because their data member count is bigger than ours [7 > 1]
-2019-06-28 08:59:43 [hz._hzInstance_1_dev.cached.thread-8] WARN  c.h.i.cluster.impl.MulticastJoiner - [192.168.100.163]:5701 [dev] [3.11.4] [192.168.100.163]:5701 is merging [multicast] to [192.168.200.6]:5701
-2019-06-28 08:59:43 [hz._hzInstance_1_dev.cached.thread-8] INFO  c.h.i.c.i.o.LockClusterStateOp - [192.168.100.163]:5701 [dev] [3.11.4] Locking cluster state. Initiator: [192.168.100.163]:5701, lease-time: 60000
-2019-06-28 08:59:43 [hz._hzInstance_1_dev.cached.thread-8] INFO  c.h.i.c.i.o.LockClusterStateOp - [192.168.100.163]:5701 [dev] [3.11.4] Extending cluster state lock. Initiator: [192.168.100.163]:5701, lease-time: 20000
-2019-06-28 08:59:43 [hz._hzInstance_1_dev.cached.thread-8] INFO  c.h.i.c.i.o.CommitClusterStateOp - [192.168.100.163]:5701 [dev] [3.11.4] Changing cluster state from ClusterState{state=ACTIVE, lock=LockGuard{lockOwner=[192.168.100.163]:5701, lockOwnerId='d8541c7c-c981-4fc4-b6a7-8eed37e66198', lockExpiryTime=1561698063762}} to ClusterStateChange{type=class com.hazelcast.cluster.ClusterState, newState=FROZEN}, initiator: [192.168.100.163]:5701, transient: false
-2019-06-28 08:59:43 [hz._hzInstance_1_dev.cached.thread-8] WARN  c.h.i.c.i.operations.MergeClustersOp - [192.168.100.163]:5701 [dev] [3.11.4] [192.168.100.163]:5701 is merging to [192.168.200.6]:5701, because: instructed by master [192.168.100.163]:5701
-2019-06-28 08:59:43 [hz._hzInstance_1_dev.cached.thread-8] INFO  com.hazelcast.core.LifecycleService - [192.168.100.163]:5701 [dev] [3.11.4] [192.168.100.163]:5701 is MERGING
-2019-06-28 08:59:43 [hz._hzInstance_1_dev.cached.thread-8] WARN  c.h.internal.cluster.ClusterService - [192.168.100.163]:5701 [dev] [3.11.4] Resetting local member UUID. Previous: 9477c23f-97a4-4160-893d-5d5640ca6a4b, new: b15a249c-5ddf-4e8d-932a-d99ce882df34
-2019-06-28 08:59:43 [hz._hzInstance_1_dev.cached.thread-8] INFO  c.hazelcast.nio.tcp.TcpIpConnection - [192.168.100.163]:5701 [dev] [3.11.4] Connection[id=1, /192.168.200.121:60103->/192.168.200.6:5701, endpoint=[192.168.200.6]:5701, alive=false, type=MEMBER] closed. Reason: TcpIpConnectionManager is stopping
-2019-06-28 08:59:44 [hz._hzInstance_1_dev.cached.thread-8] INFO  c.h.i.cluster.impl.MulticastJoiner - [192.168.100.163]:5701 [dev] [3.11.4] Trying to join to discovered node: [192.168.200.6]:5701
-2019-06-28 08:59:44 [hz._hzInstance_1_dev.cached.thread-6] INFO  com.hazelcast.nio.tcp.TcpIpConnector - [192.168.100.163]:5701 [dev] [3.11.4] Connecting to /192.168.200.6:5701, timeout: 0, bind-any: true
-2019-06-28 08:59:44 [hz._hzInstance_1_dev.IO.thread-in-1] INFO  c.hazelcast.nio.tcp.TcpIpConnection - [192.168.100.163]:5701 [dev] [3.11.4] Initialized new cluster connection between /192.168.200.121:60118 and /192.168.200.6:5701
-2019-06-28 08:59:50 [hz._hzInstance_1_dev.priority-generic-operation.thread-0] INFO  c.h.internal.cluster.ClusterService - [192.168.100.163]:5701 [dev] [3.11.4] 
 
-Members {size:8, ver:190} [
-	Member [192.168.200.6]:5701 - 53542f5e-f0db-47cc-9bb0-e06f8043f3a2
-	Member [192.168.200.6]:5703 - c079adab-dcd5-46a0-b619-8ea7c061a57f
-	Member [192.168.200.6]:5704 - f7b9f922-25c3-453c-992a-938f37953f8c
-	Member [192.168.200.6]:5705 - b3cf4c5c-050f-4a91-af0d-9cb642037335
-	Member [192.168.200.6]:5706 - ba52c03d-929e-4e5a-85d1-1c7f14400c76
-	Member [192.168.200.6]:5707 - 86a1aa42-9321-4b30-8204-3687f4a6adff
-	Member [192.168.200.6]:5708 - 132be8af-a0ab-4168-b963-ba83861055fe
-	Member [192.168.100.163]:5701 - b15a249c-5ddf-4e8d-932a-d99ce882df34 this
-]
+2019-09-30 11:58:02 - [restartedMain] INFO  o.s.c.c.c.ConfigServicePropertySourceLocator getRemoteEnvironment 207 - Fetching config from server at : http://localhost:8888
 
-2019-06-28 08:59:50 [hz._hzInstance_1_dev.cached.thread-36] INFO  com.hazelcast.nio.tcp.TcpIpConnector - [192.168.100.163]:5701 [dev] [3.11.4] Connecting to /192.168.200.6:5703, timeout: 0, bind-any: true
-2019-06-28 08:59:50 [hz._hzInstance_1_dev.IO.thread-in-2] INFO  c.hazelcast.nio.tcp.TcpIpConnection - [192.168.100.163]:5701 [dev] [3.11.4] Initialized new cluster connection between /192.168.200.121:60119 and /192.168.200.6:5703
-2019-06-28 08:59:50 [hz._hzInstance_1_dev.cached.thread-36] INFO  com.hazelcast.nio.tcp.TcpIpConnector - [192.168.100.163]:5701 [dev] [3.11.4] Connecting to /192.168.200.6:5704, timeout: 0, bind-any: true
-2019-06-28 08:59:50 [hz._hzInstance_1_dev.cached.thread-30] INFO  com.hazelcast.nio.tcp.TcpIpConnector - [192.168.100.163]:5701 [dev] [3.11.4] Connecting to /192.168.200.6:5705, timeout: 0, bind-any: true
-2019-06-28 08:59:50 [hz._hzInstance_1_dev.cached.thread-24] INFO  com.hazelcast.nio.tcp.TcpIpConnector - [192.168.100.163]:5701 [dev] [3.11.4] Connecting to /192.168.200.6:5706, timeout: 0, bind-any: true
-2019-06-28 08:59:50 [hz._hzInstance_1_dev.cached.thread-12] INFO  com.hazelcast.nio.tcp.TcpIpConnector - [192.168.100.163]:5701 [dev] [3.11.4] Connecting to /192.168.200.6:5707, timeout: 0, bind-any: true
-2019-06-28 08:59:50 [hz._hzInstance_1_dev.cached.thread-6] INFO  com.hazelcast.nio.tcp.TcpIpConnector - [192.168.100.163]:5701 [dev] [3.11.4] Connecting to /192.168.200.6:5708, timeout: 0, bind-any: true
-2019-06-28 08:59:50 [hz._hzInstance_1_dev.IO.thread-in-1] INFO  c.hazelcast.nio.tcp.TcpIpConnection - [192.168.100.163]:5701 [dev] [3.11.4] Initialized new cluster connection between /192.168.200.121:60121 and /192.168.200.6:5705
-2019-06-28 08:59:50 [hz._hzInstance_1_dev.IO.thread-in-2] INFO  c.hazelcast.nio.tcp.TcpIpConnection - [192.168.100.163]:5701 [dev] [3.11.4] Initialized new cluster connection between /192.168.200.121:60122 and /192.168.200.6:5706
-2019-06-28 08:59:50 [hz._hzInstance_1_dev.IO.thread-in-0] INFO  c.hazelcast.nio.tcp.TcpIpConnection - [192.168.100.163]:5701 [dev] [3.11.4] Initialized new cluster connection between /192.168.200.121:60123 and /192.168.200.6:5707
-2019-06-28 08:59:50 [hz._hzInstance_1_dev.IO.thread-in-0] INFO  c.hazelcast.nio.tcp.TcpIpConnection - [192.168.100.163]:5701 [dev] [3.11.4] Initialized new cluster connection between /192.168.200.121:60120 and /192.168.200.6:5704
-2019-06-28 08:59:50 [hz._hzInstance_1_dev.IO.thread-in-1] INFO  c.hazelcast.nio.tcp.TcpIpConnection - [192.168.100.163]:5701 [dev] [3.11.4] Initialized new cluster connection between /192.168.200.121:60124 and /192.168.200.6:5708
-2019-06-28 08:59:51 [hz._hzInstance_1_dev.cached.thread-8] INFO  com.hazelcast.core.LifecycleService - [192.168.100.163]:5701 [dev] [3.11.4] [192.168.100.163]:5701 is MERGED
-2019-06-28 09:09:47 [restartedMain] INFO  a.c.x.XmiesFirmaApplication - Starting XmiesFirmaApplication on DESKTOP-01C68AV with PID 19376 (C:\Users\aqilp\IdeaProjects\az.contasoft\xmies\xmies_firma\target\classes started by aqilp in C:\Users\aqilp\IdeaProjects\az.contasoft\xmies\xmies_firma)
-2019-06-28 09:09:47 [restartedMain] INFO  a.c.x.XmiesFirmaApplication - No active profile set, falling back to default profiles: default
-2019-06-28 09:09:47 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2019-06-28 09:09:47 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2019-06-28 09:09:51 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data repositories in DEFAULT mode.
-2019-06-28 09:09:52 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 290ms. Found 1 repository interfaces.
-2019-06-28 09:09:53 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$b96680ed] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2019-06-28 09:09:54 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 12012 (http)
-2019-06-28 09:09:54 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
-2019-06-28 09:09:54 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.21]
-2019-06-28 09:09:54 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
-2019-06-28 09:09:54 [restartedMain] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 6899 ms
-2019-06-28 09:09:56 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
-2019-06-28 09:09:58 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
-2019-06-28 09:09:58 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [
+2019-09-30 11:58:03 - [restartedMain] INFO  o.s.c.c.c.ConfigServicePropertySourceLocator getRemoteEnvironment 230 - Connect Timeout Exception on Url - http://localhost:8888. Will be trying the next url if available
+
+2019-09-30 11:58:03 - [restartedMain] WARN  o.s.c.c.c.ConfigServicePropertySourceLocator locate 143 - Could not locate PropertySource: I/O error on GET request for "http://localhost:8888/xmies_firma/default": Connection refused: connect; nested exception is java.net.ConnectException: Connection refused: connect
+
+2019-09-30 11:58:03 - [restartedMain] INFO  a.c.x.XmiesFirmaApplication logStartupProfileInfo 646 - No active profile set, falling back to default profiles: default
+
+2019-09-30 11:58:06 - [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate registerRepositoriesIn 126 - Bootstrapping Spring Data repositories in DEFAULT mode.
+
+2019-09-30 11:58:06 - [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate registerRepositoriesIn 182 - Finished Spring Data repository scanning in 164ms. Found 1 repository interfaces.
+
+2019-09-30 11:58:06 - [restartedMain] WARN  o.s.boot.actuate.endpoint.EndpointId logWarning 131 - Endpoint ID 'service-registry' contains invalid characters, please migrate to a valid format.
+
+2019-09-30 11:58:07 - [restartedMain] INFO  o.s.cloud.context.scope.GenericScope setSerializationId 295 - BeanFactory id=9a93c5af-51ac-3bda-980f-1a284129b667
+
+2019-09-30 11:58:07 - [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker postProcessAfterInitialization 330 - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$cbe62467] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+
+2019-09-30 11:58:07 - [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker postProcessAfterInitialization 330 - Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$e8002764] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+
+2019-09-30 11:58:08 - [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer initialize 90 - Tomcat initialized with port(s): 12012 (http)
+
+2019-09-30 11:58:08 - [restartedMain] INFO  o.a.catalina.core.StandardService log 173 - Starting service [Tomcat]
+
+2019-09-30 11:58:08 - [restartedMain] INFO  o.a.catalina.core.StandardEngine log 173 - Starting Servlet engine: [Apache Tomcat/9.0.21]
+
+2019-09-30 11:58:08 - [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] log 173 - Initializing Spring embedded WebApplicationContext
+
+2019-09-30 11:58:08 - [restartedMain] INFO  o.s.web.context.ContextLoader prepareWebApplicationContext 283 - Root WebApplicationContext: initialization completed in 4770 ms
+
+2019-09-30 11:58:09 - [restartedMain] WARN  c.n.c.sources.URLConfigurationSource <init> 121 - No URLs will be polled as dynamic configuration sources.
+
+2019-09-30 11:58:09 - [restartedMain] INFO  c.n.c.sources.URLConfigurationSource <init> 122 - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+
+2019-09-30 11:58:09 - [restartedMain] INFO  c.n.config.DynamicPropertyFactory getInstance 281 - DynamicPropertyFactory is initialized with configuration sources: com.netflix.config.ConcurrentCompositeConfiguration@7cd0fc63
+
+2019-09-30 11:58:12 - [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource getConnection 110 - HikariPool-1 - Starting...
+
+2019-09-30 11:58:15 - [restartedMain] ERROR com.zaxxer.hikari.pool.HikariPool throwPoolInitializationException 574 - HikariPool-1 - Exception during pool initialization.
+com.mysql.cj.jdbc.exceptions.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at com.mysql.cj.jdbc.exceptions.SQLError.createCommunicationsException(SQLError.java:174) ~[mysql-connector-java-8.0.16.jar:8.0.16]
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:64) ~[mysql-connector-java-8.0.16.jar:8.0.16]
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:835) ~[mysql-connector-java-8.0.16.jar:8.0.16]
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:455) ~[mysql-connector-java-8.0.16.jar:8.0.16]
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:240) ~[mysql-connector-java-8.0.16.jar:8.0.16]
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:199) ~[mysql-connector-java-8.0.16.jar:8.0.16]
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:136) ~[HikariCP-3.2.0.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:369) ~[HikariCP-3.2.0.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:198) ~[HikariCP-3.2.0.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:467) [HikariCP-3.2.0.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:541) [HikariCP-3.2.0.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:115) [HikariCP-3.2.0.jar:na]
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:112) [HikariCP-3.2.0.jar:na]
+	at com.zaxxer.hikari.HikariDataSource$$FastClassBySpringCGLIB$$eeb1ae86.invoke(<generated>) [HikariCP-3.2.0.jar:na]
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218) [spring-core-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:749) [spring-aop-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163) [spring-aop-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.aop.support.DelegatingIntroductionInterceptor.doProceed(DelegatingIntroductionInterceptor.java:136) [spring-aop-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.aop.support.DelegatingIntroductionInterceptor.invoke(DelegatingIntroductionInterceptor.java:124) [spring-aop-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) [spring-aop-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:688) [spring-aop-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at com.zaxxer.hikari.HikariDataSource$$EnhancerBySpringCGLIB$$9f6f8377.getConnection(<generated>) [HikariCP-3.2.0.jar:na]
+	at org.springframework.jdbc.datasource.DataSourceUtils.fetchConnection(DataSourceUtils.java:157) [spring-jdbc-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.jdbc.datasource.DataSourceUtils.doGetConnection(DataSourceUtils.java:115) [spring-jdbc-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.jdbc.datasource.DataSourceUtils.getConnection(DataSourceUtils.java:78) [spring-jdbc-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.jdbc.support.JdbcUtils.extractDatabaseMetaData(JdbcUtils.java:319) [spring-jdbc-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.jdbc.support.JdbcUtils.extractDatabaseMetaData(JdbcUtils.java:356) [spring-jdbc-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.boot.autoconfigure.orm.jpa.DatabaseLookup.getDatabase(DatabaseLookup.java:73) [spring-boot-autoconfigure-2.1.6.RELEASE.jar:2.1.6.RELEASE]
+	at org.springframework.boot.autoconfigure.orm.jpa.JpaProperties.determineDatabase(JpaProperties.java:142) [spring-boot-autoconfigure-2.1.6.RELEASE.jar:2.1.6.RELEASE]
+	at org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration.jpaVendorAdapter(JpaBaseConfiguration.java:112) [spring-boot-autoconfigure-2.1.6.RELEASE.jar:2.1.6.RELEASE]
+	at org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaConfiguration$$EnhancerBySpringCGLIB$$eabce6d6.CGLIB$jpaVendorAdapter$3(<generated>) [spring-boot-autoconfigure-2.1.6.RELEASE.jar:2.1.6.RELEASE]
+	at org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaConfiguration$$EnhancerBySpringCGLIB$$eabce6d6$$FastClassBySpringCGLIB$$324f018f.invoke(<generated>) [spring-boot-autoconfigure-2.1.6.RELEASE.jar:2.1.6.RELEASE]
+	at org.springframework.cglib.proxy.MethodProxy.invokeSuper(MethodProxy.java:244) [spring-core-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.context.annotation.ConfigurationClassEnhancer$BeanMethodInterceptor.intercept(ConfigurationClassEnhancer.java:363) [spring-context-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaConfiguration$$EnhancerBySpringCGLIB$$eabce6d6.jpaVendorAdapter(<generated>) [spring-boot-autoconfigure-2.1.6.RELEASE.jar:2.1.6.RELEASE]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_201]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_201]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_201]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_201]
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:154) [spring-beans-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:622) [spring-beans-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:456) [spring-beans-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1321) [spring-beans-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1160) [spring-beans-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:555) [spring-beans-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:515) [spring-beans-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:320) [spring-beans-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222) ~[spring-beans-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:318) [spring-beans-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199) [spring-beans-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:277) ~[spring-beans-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1251) ~[spring-beans-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1171) ~[spring-beans-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:857) [spring-beans-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:760) [spring-beans-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:509) [spring-beans-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1321) [spring-beans-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1160) [spring-beans-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:555) [spring-beans-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:515) [spring-beans-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:320) [spring-beans-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222) ~[spring-beans-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:318) [spring-beans-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199) [spring-beans-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:277) ~[spring-beans-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1251) ~[spring-beans-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1171) ~[spring-beans-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:857) [spring-beans-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:760) [spring-beans-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:509) [spring-beans-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1321) [spring-beans-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1160) [spring-beans-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:555) [spring-beans-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:515) [spring-beans-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:320) [spring-beans-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222) ~[spring-beans-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:318) [spring-beans-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199) [spring-beans-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1105) ~[spring-context-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:867) ~[spring-context-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:549) ~[spring-context-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:140) ~[spring-boot-2.1.6.RELEASE.jar:2.1.6.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:742) ~[spring-boot-2.1.6.RELEASE.jar:2.1.6.RELEASE]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:389) ~[spring-boot-2.1.6.RELEASE.jar:2.1.6.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:311) ~[spring-boot-2.1.6.RELEASE.jar:2.1.6.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1213) ~[spring-boot-2.1.6.RELEASE.jar:2.1.6.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1202) ~[spring-boot-2.1.6.RELEASE.jar:2.1.6.RELEASE]
+	at az.contasoft.xmies_firma.XmiesFirmaApplication.main(XmiesFirmaApplication.java:14) ~[classes/:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_201]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_201]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_201]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_201]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49) ~[spring-boot-devtools-2.1.6.RELEASE.jar:2.1.6.RELEASE]
+Caused by: com.mysql.cj.exceptions.CJCommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method) ~[na:1.8.0_201]
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62) ~[na:1.8.0_201]
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45) ~[na:1.8.0_201]
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423) ~[na:1.8.0_201]
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:61) ~[mysql-connector-java-8.0.16.jar:8.0.16]
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:105) ~[mysql-connector-java-8.0.16.jar:8.0.16]
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:151) ~[mysql-connector-java-8.0.16.jar:8.0.16]
+	at com.mysql.cj.exceptions.ExceptionFactory.createCommunicationsException(ExceptionFactory.java:167) ~[mysql-connector-java-8.0.16.jar:8.0.16]
+	at com.mysql.cj.protocol.a.NativeSocketConnection.connect(NativeSocketConnection.java:91) ~[mysql-connector-java-8.0.16.jar:8.0.16]
+	at com.mysql.cj.NativeSession.connect(NativeSession.java:152) ~[mysql-connector-java-8.0.16.jar:8.0.16]
+	at com.mysql.cj.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:955) ~[mysql-connector-java-8.0.16.jar:8.0.16]
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:825) ~[mysql-connector-java-8.0.16.jar:8.0.16]
+	... 90 common frames omitted
+Caused by: java.net.ConnectException: Connection refused: connect
+	at java.net.DualStackPlainSocketImpl.waitForConnect(Native Method) ~[na:1.8.0_201]
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:85) ~[na:1.8.0_201]
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350) ~[na:1.8.0_201]
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206) ~[na:1.8.0_201]
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188) ~[na:1.8.0_201]
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172) ~[na:1.8.0_201]
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392) ~[na:1.8.0_201]
+	at java.net.Socket.connect(Socket.java:589) ~[na:1.8.0_201]
+	at com.mysql.cj.protocol.StandardSocketFactory.connect(StandardSocketFactory.java:155) ~[mysql-connector-java-8.0.16.jar:8.0.16]
+	at com.mysql.cj.protocol.a.NativeSocketConnection.connect(NativeSocketConnection.java:65) ~[mysql-connector-java-8.0.16.jar:8.0.16]
+	... 93 common frames omitted
+
+2019-09-30 11:58:15 - [restartedMain] WARN  o.s.b.a.orm.jpa.DatabaseLookup getDatabase 81 - Unable to determine jdbc url from datasource
+org.springframework.jdbc.support.MetaDataAccessException: Could not get Connection for extracting meta-data; nested exception is org.springframework.jdbc.CannotGetJdbcConnectionException: Failed to obtain JDBC Connection; nested exception is com.mysql.cj.jdbc.exceptions.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at org.springframework.jdbc.support.JdbcUtils.extractDatabaseMetaData(JdbcUtils.java:328) ~[spring-jdbc-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.jdbc.support.JdbcUtils.extractDatabaseMetaData(JdbcUtils.java:356) ~[spring-jdbc-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.boot.autoconfigure.orm.jpa.DatabaseLookup.getDatabase(DatabaseLookup.java:73) ~[spring-boot-autoconfigure-2.1.6.RELEASE.jar:2.1.6.RELEASE]
+	at org.springframework.boot.autoconfigure.orm.jpa.JpaProperties.determineDatabase(JpaProperties.java:142) [spring-boot-autoconfigure-2.1.6.RELEASE.jar:2.1.6.RELEASE]
+	at org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration.jpaVendorAdapter(JpaBaseConfiguration.java:112) [spring-boot-autoconfigure-2.1.6.RELEASE.jar:2.1.6.RELEASE]
+	at org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaConfiguration$$EnhancerBySpringCGLIB$$eabce6d6.CGLIB$jpaVendorAdapter$3(<generated>) [spring-boot-autoconfigure-2.1.6.RELEASE.jar:2.1.6.RELEASE]
+	at org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaConfiguration$$EnhancerBySpringCGLIB$$eabce6d6$$FastClassBySpringCGLIB$$324f018f.invoke(<generated>) [spring-boot-autoconfigure-2.1.6.RELEASE.jar:2.1.6.RELEASE]
+	at org.springframework.cglib.proxy.MethodProxy.invokeSuper(MethodProxy.java:244) [spring-core-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.context.annotation.ConfigurationClassEnhancer$BeanMethodInterceptor.intercept(ConfigurationClassEnhancer.java:363) [spring-context-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaConfiguration$$EnhancerBySpringCGLIB$$eabce6d6.jpaVendorAdapter(<generated>) [spring-boot-autoconfigure-2.1.6.RELEASE.jar:2.1.6.RELEASE]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_201]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_201]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_201]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_201]
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:154) [spring-beans-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:622) [spring-beans-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:456) [spring-beans-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1321) [spring-beans-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1160) [spring-beans-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:555) [spring-beans-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:515) [spring-beans-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:320) [spring-beans-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222) ~[spring-beans-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:318) [spring-beans-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199) [spring-beans-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:277) ~[spring-beans-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1251) ~[spring-beans-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1171) ~[spring-beans-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:857) [spring-beans-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:760) [spring-beans-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:509) [spring-beans-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1321) [spring-beans-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1160) [spring-beans-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:555) [spring-beans-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:515) [spring-beans-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:320) [spring-beans-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222) ~[spring-beans-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:318) [spring-beans-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199) [spring-beans-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:277) ~[spring-beans-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1251) ~[spring-beans-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1171) ~[spring-beans-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:857) [spring-beans-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:760) [spring-beans-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:509) [spring-beans-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1321) [spring-beans-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1160) [spring-beans-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:555) [spring-beans-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:515) [spring-beans-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:320) [spring-beans-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222) ~[spring-beans-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:318) [spring-beans-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199) [spring-beans-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1105) ~[spring-context-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:867) ~[spring-context-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:549) ~[spring-context-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:140) ~[spring-boot-2.1.6.RELEASE.jar:2.1.6.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:742) ~[spring-boot-2.1.6.RELEASE.jar:2.1.6.RELEASE]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:389) ~[spring-boot-2.1.6.RELEASE.jar:2.1.6.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:311) ~[spring-boot-2.1.6.RELEASE.jar:2.1.6.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1213) ~[spring-boot-2.1.6.RELEASE.jar:2.1.6.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1202) ~[spring-boot-2.1.6.RELEASE.jar:2.1.6.RELEASE]
+	at az.contasoft.xmies_firma.XmiesFirmaApplication.main(XmiesFirmaApplication.java:14) ~[classes/:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_201]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_201]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_201]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_201]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49) ~[spring-boot-devtools-2.1.6.RELEASE.jar:2.1.6.RELEASE]
+Caused by: org.springframework.jdbc.CannotGetJdbcConnectionException: Failed to obtain JDBC Connection; nested exception is com.mysql.cj.jdbc.exceptions.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at org.springframework.jdbc.datasource.DataSourceUtils.getConnection(DataSourceUtils.java:81) ~[spring-jdbc-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.jdbc.support.JdbcUtils.extractDatabaseMetaData(JdbcUtils.java:319) ~[spring-jdbc-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	... 67 common frames omitted
+Caused by: com.mysql.cj.jdbc.exceptions.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at com.mysql.cj.jdbc.exceptions.SQLError.createCommunicationsException(SQLError.java:174) ~[mysql-connector-java-8.0.16.jar:8.0.16]
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:64) ~[mysql-connector-java-8.0.16.jar:8.0.16]
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:835) ~[mysql-connector-java-8.0.16.jar:8.0.16]
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:455) ~[mysql-connector-java-8.0.16.jar:8.0.16]
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:240) ~[mysql-connector-java-8.0.16.jar:8.0.16]
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:199) ~[mysql-connector-java-8.0.16.jar:8.0.16]
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:136) ~[HikariCP-3.2.0.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:369) ~[HikariCP-3.2.0.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:198) ~[HikariCP-3.2.0.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:467) ~[HikariCP-3.2.0.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:541) ~[HikariCP-3.2.0.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:115) ~[HikariCP-3.2.0.jar:na]
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:112) ~[HikariCP-3.2.0.jar:na]
+	at com.zaxxer.hikari.HikariDataSource$$FastClassBySpringCGLIB$$eeb1ae86.invoke(<generated>) ~[HikariCP-3.2.0.jar:na]
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218) [spring-core-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:749) ~[spring-aop-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163) ~[spring-aop-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.aop.support.DelegatingIntroductionInterceptor.doProceed(DelegatingIntroductionInterceptor.java:136) ~[spring-aop-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.aop.support.DelegatingIntroductionInterceptor.invoke(DelegatingIntroductionInterceptor.java:124) ~[spring-aop-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:688) ~[spring-aop-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at com.zaxxer.hikari.HikariDataSource$$EnhancerBySpringCGLIB$$9f6f8377.getConnection(<generated>) ~[HikariCP-3.2.0.jar:na]
+	at org.springframework.jdbc.datasource.DataSourceUtils.fetchConnection(DataSourceUtils.java:157) ~[spring-jdbc-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.jdbc.datasource.DataSourceUtils.doGetConnection(DataSourceUtils.java:115) ~[spring-jdbc-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.jdbc.datasource.DataSourceUtils.getConnection(DataSourceUtils.java:78) ~[spring-jdbc-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	... 68 common frames omitted
+Caused by: com.mysql.cj.exceptions.CJCommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method) ~[na:1.8.0_201]
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62) ~[na:1.8.0_201]
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45) ~[na:1.8.0_201]
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423) ~[na:1.8.0_201]
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:61) ~[mysql-connector-java-8.0.16.jar:8.0.16]
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:105) ~[mysql-connector-java-8.0.16.jar:8.0.16]
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:151) ~[mysql-connector-java-8.0.16.jar:8.0.16]
+	at com.mysql.cj.exceptions.ExceptionFactory.createCommunicationsException(ExceptionFactory.java:167) ~[mysql-connector-java-8.0.16.jar:8.0.16]
+	at com.mysql.cj.protocol.a.NativeSocketConnection.connect(NativeSocketConnection.java:91) ~[mysql-connector-java-8.0.16.jar:8.0.16]
+	at com.mysql.cj.NativeSession.connect(NativeSession.java:152) ~[mysql-connector-java-8.0.16.jar:8.0.16]
+	at com.mysql.cj.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:955) ~[mysql-connector-java-8.0.16.jar:8.0.16]
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:825) ~[mysql-connector-java-8.0.16.jar:8.0.16]
+	... 90 common frames omitted
+Caused by: java.net.ConnectException: Connection refused: connect
+	at java.net.DualStackPlainSocketImpl.waitForConnect(Native Method) ~[na:1.8.0_201]
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:85) ~[na:1.8.0_201]
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350) ~[na:1.8.0_201]
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206) ~[na:1.8.0_201]
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188) ~[na:1.8.0_201]
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172) ~[na:1.8.0_201]
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392) ~[na:1.8.0_201]
+	at java.net.Socket.connect(Socket.java:589) ~[na:1.8.0_201]
+	at com.mysql.cj.protocol.StandardSocketFactory.connect(StandardSocketFactory.java:155) ~[mysql-connector-java-8.0.16.jar:8.0.16]
+	at com.mysql.cj.protocol.a.NativeSocketConnection.connect(NativeSocketConnection.java:65) ~[mysql-connector-java-8.0.16.jar:8.0.16]
+	... 93 common frames omitted
+
+2019-09-30 11:58:15 - [restartedMain] INFO  o.h.jpa.internal.util.LogHelper logPersistenceUnitInformation 31 - HHH000204: Processing PersistenceUnitInfo [
 	name: default
 	...]
-2019-06-28 09:09:58 [restartedMain] INFO  org.hibernate.Version - HHH000412: Hibernate Core {5.3.10.Final}
-2019-06-28 09:09:58 [restartedMain] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
-2019-06-28 09:09:59 [restartedMain] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
-2019-06-28 09:09:59 [restartedMain] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
-2019-06-28 09:10:01 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
-2019-06-28 09:10:01 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
-2019-06-28 09:10:02 [restartedMain] ERROR a.c.x.util.HazelcastUtility - Error Problem occured when caching : {}
-java.lang.NullPointerException: null
-	at az.contasoft.xmies_firma.util.HazelcastUtility.startCaching(HazelcastUtility.java:75)
-	at az.contasoft.xmies_firma.util.HazelcastUtility.init(HazelcastUtility.java:89)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:498)
-	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleElement.invoke(InitDestroyAnnotationBeanPostProcessor.java:363)
-	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMetadata.invokeInitMethods(InitDestroyAnnotationBeanPostProcessor.java:307)
-	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessBeforeInitialization(InitDestroyAnnotationBeanPostProcessor.java:136)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyBeanPostProcessorsBeforeInitialization(AbstractAutowireCapableBeanFactory.java:414)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1770)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:593)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:515)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:320)
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:318)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
-	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:277)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1251)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1171)
-	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:857)
-	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:760)
-	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:218)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1341)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1187)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:555)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:515)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:320)
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:318)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
-	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:277)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1251)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1171)
-	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:857)
-	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:760)
-	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:218)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1341)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1187)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:555)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:515)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:320)
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:318)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:845)
-	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:877)
-	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:549)
-	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:140)
-	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:742)
-	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:389)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:311)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1213)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1202)
-	at az.contasoft.xmies_firma.XmiesFirmaApplication.main(XmiesFirmaApplication.java:14)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:498)
-	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49)
-2019-06-28 09:10:02 [restartedMain] INFO  com.hazelcast.instance.AddressPicker - [LOCAL] [dev] [3.11.4] Prefer IPv4 stack is true, prefer IPv6 addresses is false
-2019-06-28 09:10:03 [restartedMain] INFO  com.hazelcast.instance.AddressPicker - [LOCAL] [dev] [3.11.4] Picked [192.168.200.121]:5701, using socket ServerSocket[addr=/0:0:0:0:0:0:0:0,localport=5701], bind any local is true
-2019-06-28 09:10:03 [restartedMain] INFO  com.hazelcast.system - [192.168.200.121]:5701 [dev] [3.11.4] Hazelcast 3.11.4 (20190509 - d5ad9d4) starting at [192.168.200.121]:5701
-2019-06-28 09:10:03 [restartedMain] INFO  com.hazelcast.system - [192.168.200.121]:5701 [dev] [3.11.4] Copyright (c) 2008-2019, Hazelcast, Inc. All Rights Reserved.
-2019-06-28 09:10:03 [restartedMain] INFO  com.hazelcast.instance.Node - [192.168.200.121]:5701 [dev] [3.11.4] A non-empty group password is configured for the Hazelcast member. Starting with Hazelcast version 3.8.2, members with the same group name, but with different group passwords (that do not use authentication) form a cluster. The group password configuration will be removed completely in a future release.
-2019-06-28 09:10:03 [restartedMain] INFO  c.h.s.i.o.impl.BackpressureRegulator - [192.168.200.121]:5701 [dev] [3.11.4] Backpressure is disabled
-2019-06-28 09:10:06 [restartedMain] INFO  com.hazelcast.instance.Node - [192.168.200.121]:5701 [dev] [3.11.4] Creating MulticastJoiner
-2019-06-28 09:10:06 [restartedMain] INFO  c.h.s.i.o.impl.OperationExecutorImpl - [192.168.200.121]:5701 [dev] [3.11.4] Starting 8 partition threads and 5 generic threads (1 dedicated for priority tasks)
-2019-06-28 09:10:06 [restartedMain] INFO  c.h.internal.diagnostics.Diagnostics - [192.168.200.121]:5701 [dev] [3.11.4] Diagnostics disabled. To enable add -Dhazelcast.diagnostics.enabled=true to the JVM arguments.
-2019-06-28 09:10:06 [restartedMain] INFO  com.hazelcast.core.LifecycleService - [192.168.200.121]:5701 [dev] [3.11.4] [192.168.200.121]:5701 is STARTING
-2019-06-28 09:10:06 [restartedMain] INFO  c.h.i.cluster.impl.MulticastJoiner - [192.168.200.121]:5701 [dev] [3.11.4] Trying to join to discovered node: [192.168.200.6]:5701
-2019-06-28 09:10:06 [hz._hzInstance_1_dev.cached.thread-3] INFO  com.hazelcast.nio.tcp.TcpIpConnector - [192.168.200.121]:5701 [dev] [3.11.4] Connecting to /192.168.200.6:5701, timeout: 0, bind-any: true
-2019-06-28 09:10:06 [hz._hzInstance_1_dev.IO.thread-in-0] INFO  c.hazelcast.nio.tcp.TcpIpConnection - [192.168.200.121]:5701 [dev] [3.11.4] Initialized new cluster connection between /192.168.200.121:60223 and /192.168.200.6:5701
-2019-06-28 09:10:12 [hz._hzInstance_1_dev.priority-generic-operation.thread-0] INFO  c.h.internal.cluster.ClusterService - [192.168.200.121]:5701 [dev] [3.11.4] 
 
-Members {size:8, ver:192} [
-	Member [192.168.200.6]:5701 - 53542f5e-f0db-47cc-9bb0-e06f8043f3a2
-	Member [192.168.200.6]:5703 - c079adab-dcd5-46a0-b619-8ea7c061a57f
-	Member [192.168.200.6]:5704 - f7b9f922-25c3-453c-992a-938f37953f8c
-	Member [192.168.200.6]:5705 - b3cf4c5c-050f-4a91-af0d-9cb642037335
-	Member [192.168.200.6]:5706 - ba52c03d-929e-4e5a-85d1-1c7f14400c76
-	Member [192.168.200.6]:5707 - 86a1aa42-9321-4b30-8204-3687f4a6adff
-	Member [192.168.200.6]:5708 - 132be8af-a0ab-4168-b963-ba83861055fe
-	Member [192.168.200.121]:5701 - bf7cdec3-c374-4171-b755-ba036d9d6691 this
-]
+2019-09-30 11:58:15 - [restartedMain] INFO  org.hibernate.Version logVersion 46 - HHH000412: Hibernate Core {5.3.10.Final}
 
-2019-06-28 09:10:12 [hz._hzInstance_1_dev.cached.thread-7] INFO  com.hazelcast.nio.tcp.TcpIpConnector - [192.168.200.121]:5701 [dev] [3.11.4] Connecting to /192.168.200.6:5703, timeout: 0, bind-any: true
-2019-06-28 09:10:12 [hz._hzInstance_1_dev.cached.thread-8] INFO  com.hazelcast.nio.tcp.TcpIpConnector - [192.168.200.121]:5701 [dev] [3.11.4] Connecting to /192.168.200.6:5704, timeout: 0, bind-any: true
-2019-06-28 09:10:12 [hz._hzInstance_1_dev.cached.thread-7] INFO  com.hazelcast.nio.tcp.TcpIpConnector - [192.168.200.121]:5701 [dev] [3.11.4] Connecting to /192.168.200.6:5705, timeout: 0, bind-any: true
-2019-06-28 09:10:12 [hz._hzInstance_1_dev.cached.thread-6] INFO  com.hazelcast.nio.tcp.TcpIpConnector - [192.168.200.121]:5701 [dev] [3.11.4] Connecting to /192.168.200.6:5706, timeout: 0, bind-any: true
-2019-06-28 09:10:12 [hz._hzInstance_1_dev.cached.thread-1] INFO  com.hazelcast.nio.tcp.TcpIpConnector - [192.168.200.121]:5701 [dev] [3.11.4] Connecting to /192.168.200.6:5707, timeout: 0, bind-any: true
-2019-06-28 09:10:12 [hz._hzInstance_1_dev.IO.thread-in-1] INFO  c.hazelcast.nio.tcp.TcpIpConnection - [192.168.200.121]:5701 [dev] [3.11.4] Initialized new cluster connection between /192.168.200.121:60225 and /192.168.200.6:5703
-2019-06-28 09:10:12 [hz._hzInstance_1_dev.cached.thread-5] INFO  com.hazelcast.nio.tcp.TcpIpConnector - [192.168.200.121]:5701 [dev] [3.11.4] Connecting to /192.168.200.6:5708, timeout: 0, bind-any: true
-2019-06-28 09:10:12 [hz._hzInstance_1_dev.IO.thread-in-2] INFO  c.hazelcast.nio.tcp.TcpIpConnection - [192.168.200.121]:5701 [dev] [3.11.4] Initialized new cluster connection between /192.168.200.121:60226 and /192.168.200.6:5704
-2019-06-28 09:10:12 [hz._hzInstance_1_dev.IO.thread-in-0] INFO  c.hazelcast.nio.tcp.TcpIpConnection - [192.168.200.121]:5701 [dev] [3.11.4] Initialized new cluster connection between /192.168.200.121:60227 and /192.168.200.6:5705
-2019-06-28 09:10:12 [hz._hzInstance_1_dev.IO.thread-in-1] INFO  c.hazelcast.nio.tcp.TcpIpConnection - [192.168.200.121]:5701 [dev] [3.11.4] Initialized new cluster connection between /192.168.200.121:60228 and /192.168.200.6:5706
-2019-06-28 09:10:12 [hz._hzInstance_1_dev.IO.thread-in-0] INFO  c.hazelcast.nio.tcp.TcpIpConnection - [192.168.200.121]:5701 [dev] [3.11.4] Initialized new cluster connection between /192.168.200.121:60230 and /192.168.200.6:5708
-2019-06-28 09:10:12 [hz._hzInstance_1_dev.IO.thread-in-2] INFO  c.hazelcast.nio.tcp.TcpIpConnection - [192.168.200.121]:5701 [dev] [3.11.4] Initialized new cluster connection between /192.168.200.121:60229 and /192.168.200.6:5707
-2019-06-28 09:10:13 [restartedMain] INFO  com.hazelcast.core.LifecycleService - [192.168.200.121]:5701 [dev] [3.11.4] [192.168.200.121]:5701 is STARTED
-2019-06-28 09:10:14 [restartedMain] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
-2019-06-28 09:10:14 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration$JpaWebMvcConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2019-06-28 09:10:15 [restartedMain] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 2 endpoint(s) beneath base path '/actuator'
-2019-06-28 09:10:15 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 12012 (http) with context path ''
-2019-06-28 09:10:15 [restartedMain] INFO  a.c.x.XmiesFirmaApplication - Started XmiesFirmaApplication in 29.209 seconds (JVM running for 33.938)
-2019-06-28 09:10:16 [RMI TCP Connection(2)-192.168.200.121] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
-2019-06-28 09:10:16 [RMI TCP Connection(2)-192.168.200.121] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
-2019-06-28 09:10:16 [RMI TCP Connection(2)-192.168.200.121] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 35 ms
-2019-06-28 09:45:05 [restartedMain] INFO  a.c.x.XmiesFirmaApplication - Starting XmiesFirmaApplication on DESKTOP-01C68AV with PID 20604 (C:\Users\aqilp\IdeaProjects\az.contasoft\xmies\xmies_firma\target\classes started by aqilp in C:\Users\aqilp\IdeaProjects\az.contasoft\xmies\xmies_firma)
-2019-06-28 09:45:05 [restartedMain] INFO  a.c.x.XmiesFirmaApplication - No active profile set, falling back to default profiles: default
-2019-06-28 09:45:05 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2019-06-28 09:45:05 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2019-06-28 09:45:06 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data repositories in DEFAULT mode.
-2019-06-28 09:45:06 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 47ms. Found 1 repository interfaces.
-2019-06-28 09:45:06 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$7e0a5402] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2019-06-28 09:45:06 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 12012 (http)
-2019-06-28 09:45:06 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
-2019-06-28 09:45:06 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.21]
-2019-06-28 09:45:07 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
-2019-06-28 09:45:07 [restartedMain] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1662 ms
-2019-06-28 09:45:07 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
-2019-06-28 09:45:07 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
-2019-06-28 09:45:07 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [
-	name: default
-	...]
-2019-06-28 09:45:07 [restartedMain] INFO  org.hibernate.Version - HHH000412: Hibernate Core {5.3.10.Final}
-2019-06-28 09:45:07 [restartedMain] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
-2019-06-28 09:45:08 [restartedMain] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
-2019-06-28 09:45:08 [restartedMain] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
-2019-06-28 09:45:08 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
-2019-06-28 09:45:08 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
-2019-06-28 09:45:08 [restartedMain] INFO  com.hazelcast.instance.AddressPicker - [LOCAL] [dev] [3.11.4] Prefer IPv4 stack is true, prefer IPv6 addresses is false
-2019-06-28 09:45:09 [restartedMain] INFO  com.hazelcast.instance.AddressPicker - [LOCAL] [dev] [3.11.4] Picked [192.168.200.121]:5701, using socket ServerSocket[addr=/0:0:0:0:0:0:0:0,localport=5701], bind any local is true
-2019-06-28 09:45:09 [restartedMain] INFO  com.hazelcast.system - [192.168.200.121]:5701 [dev] [3.11.4] Hazelcast 3.11.4 (20190509 - d5ad9d4) starting at [192.168.200.121]:5701
-2019-06-28 09:45:09 [restartedMain] INFO  com.hazelcast.system - [192.168.200.121]:5701 [dev] [3.11.4] Copyright (c) 2008-2019, Hazelcast, Inc. All Rights Reserved.
-2019-06-28 09:45:09 [restartedMain] INFO  com.hazelcast.instance.Node - [192.168.200.121]:5701 [dev] [3.11.4] A non-empty group password is configured for the Hazelcast member. Starting with Hazelcast version 3.8.2, members with the same group name, but with different group passwords (that do not use authentication) form a cluster. The group password configuration will be removed completely in a future release.
-2019-06-28 09:45:09 [restartedMain] INFO  c.h.s.i.o.impl.BackpressureRegulator - [192.168.200.121]:5701 [dev] [3.11.4] Backpressure is disabled
-2019-06-28 09:45:10 [restartedMain] INFO  com.hazelcast.instance.Node - [192.168.200.121]:5701 [dev] [3.11.4] Creating MulticastJoiner
-2019-06-28 09:45:10 [restartedMain] INFO  c.h.s.i.o.impl.OperationExecutorImpl - [192.168.200.121]:5701 [dev] [3.11.4] Starting 8 partition threads and 5 generic threads (1 dedicated for priority tasks)
-2019-06-28 09:45:10 [restartedMain] INFO  c.h.internal.diagnostics.Diagnostics - [192.168.200.121]:5701 [dev] [3.11.4] Diagnostics disabled. To enable add -Dhazelcast.diagnostics.enabled=true to the JVM arguments.
-2019-06-28 09:45:10 [restartedMain] INFO  com.hazelcast.core.LifecycleService - [192.168.200.121]:5701 [dev] [3.11.4] [192.168.200.121]:5701 is STARTING
-2019-06-28 09:45:10 [restartedMain] INFO  c.h.i.cluster.impl.MulticastJoiner - [192.168.200.121]:5701 [dev] [3.11.4] Trying to join to discovered node: [192.168.200.6]:5701
-2019-06-28 09:45:10 [hz._hzInstance_1_dev.cached.thread-2] INFO  com.hazelcast.nio.tcp.TcpIpConnector - [192.168.200.121]:5701 [dev] [3.11.4] Connecting to /192.168.200.6:5701, timeout: 0, bind-any: true
-2019-06-28 09:45:10 [hz._hzInstance_1_dev.IO.thread-in-0] INFO  c.hazelcast.nio.tcp.TcpIpConnection - [192.168.200.121]:5701 [dev] [3.11.4] Initialized new cluster connection between /192.168.200.121:60561 and /192.168.200.6:5701
-2019-06-28 09:45:10 [hz._hzInstance_1_dev.IO.thread-in-0] INFO  c.hazelcast.nio.tcp.TcpIpConnection - [192.168.200.121]:5701 [dev] [3.11.4] Connection[id=1, /192.168.200.121:60561->/192.168.200.6:5701, endpoint=[192.168.200.6]:5701, alive=false, type=MEMBER] closed. Reason: Connection closed by the other side
-2019-06-28 09:45:11 [restartedMain] INFO  c.h.i.cluster.impl.MulticastJoiner - [192.168.200.121]:5701 [dev] [3.11.4] Trying to join to discovered node: [192.168.200.6]:5701
-2019-06-28 09:45:11 [hz._hzInstance_1_dev.cached.thread-2] INFO  com.hazelcast.nio.tcp.TcpIpConnector - [192.168.200.121]:5701 [dev] [3.11.4] Connecting to /192.168.200.6:5701, timeout: 0, bind-any: true
-2019-06-28 09:45:11 [hz._hzInstance_1_dev.IO.thread-in-1] INFO  c.hazelcast.nio.tcp.TcpIpConnection - [192.168.200.121]:5701 [dev] [3.11.4] Initialized new cluster connection between /192.168.200.121:60562 and /192.168.200.6:5701
-2019-06-28 09:45:18 [hz._hzInstance_1_dev.priority-generic-operation.thread-0] INFO  c.h.internal.cluster.ClusterService - [192.168.200.121]:5701 [dev] [3.11.4] 
+2019-09-30 11:58:15 - [restartedMain] INFO  org.hibernate.cfg.Environment <clinit> 213 - HHH000206: hibernate.properties not found
 
-Members {size:8, ver:194} [
-	Member [192.168.200.6]:5701 - 53542f5e-f0db-47cc-9bb0-e06f8043f3a2
-	Member [192.168.200.6]:5703 - c079adab-dcd5-46a0-b619-8ea7c061a57f
-	Member [192.168.200.6]:5704 - f7b9f922-25c3-453c-992a-938f37953f8c
-	Member [192.168.200.6]:5705 - b3cf4c5c-050f-4a91-af0d-9cb642037335
-	Member [192.168.200.6]:5706 - ba52c03d-929e-4e5a-85d1-1c7f14400c76
-	Member [192.168.200.6]:5707 - 86a1aa42-9321-4b30-8204-3687f4a6adff
-	Member [192.168.200.6]:5708 - 132be8af-a0ab-4168-b963-ba83861055fe
-	Member [192.168.200.121]:5701 - 5844f520-aca0-4119-b052-27c4e4fe8b1a this
-]
+2019-09-30 11:58:16 - [restartedMain] INFO  o.h.annotations.common.Version <clinit> 49 - HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
 
-2019-06-28 09:45:18 [hz._hzInstance_1_dev.cached.thread-6] INFO  com.hazelcast.nio.tcp.TcpIpConnector - [192.168.200.121]:5701 [dev] [3.11.4] Connecting to /192.168.200.6:5703, timeout: 0, bind-any: true
-2019-06-28 09:45:18 [hz._hzInstance_1_dev.cached.thread-5] INFO  com.hazelcast.nio.tcp.TcpIpConnector - [192.168.200.121]:5701 [dev] [3.11.4] Connecting to /192.168.200.6:5704, timeout: 0, bind-any: true
-2019-06-28 09:45:18 [hz._hzInstance_1_dev.cached.thread-4] INFO  com.hazelcast.nio.tcp.TcpIpConnector - [192.168.200.121]:5701 [dev] [3.11.4] Connecting to /192.168.200.6:5705, timeout: 0, bind-any: true
-2019-06-28 09:45:18 [hz._hzInstance_1_dev.cached.thread-2] INFO  com.hazelcast.nio.tcp.TcpIpConnector - [192.168.200.121]:5701 [dev] [3.11.4] Connecting to /192.168.200.6:5707, timeout: 0, bind-any: true
-2019-06-28 09:45:18 [hz._hzInstance_1_dev.cached.thread-7] INFO  com.hazelcast.nio.tcp.TcpIpConnector - [192.168.200.121]:5701 [dev] [3.11.4] Connecting to /192.168.200.6:5706, timeout: 0, bind-any: true
-2019-06-28 09:45:18 [hz._hzInstance_1_dev.cached.thread-1] INFO  com.hazelcast.nio.tcp.TcpIpConnector - [192.168.200.121]:5701 [dev] [3.11.4] Connecting to /192.168.200.6:5708, timeout: 0, bind-any: true
-2019-06-28 09:45:18 [hz._hzInstance_1_dev.IO.thread-in-2] INFO  c.hazelcast.nio.tcp.TcpIpConnection - [192.168.200.121]:5701 [dev] [3.11.4] Initialized new cluster connection between /192.168.200.121:60566 and /192.168.200.6:5703
-2019-06-28 09:45:18 [hz._hzInstance_1_dev.IO.thread-in-2] INFO  c.hazelcast.nio.tcp.TcpIpConnection - [192.168.200.121]:5701 [dev] [3.11.4] Initialized new cluster connection between /192.168.200.121:60569 and /192.168.200.6:5706
-2019-06-28 09:45:18 [hz._hzInstance_1_dev.IO.thread-in-0] INFO  c.hazelcast.nio.tcp.TcpIpConnection - [192.168.200.121]:5701 [dev] [3.11.4] Initialized new cluster connection between /192.168.200.121:60570 and /192.168.200.6:5707
-2019-06-28 09:45:18 [hz._hzInstance_1_dev.IO.thread-in-1] INFO  c.hazelcast.nio.tcp.TcpIpConnection - [192.168.200.121]:5701 [dev] [3.11.4] Initialized new cluster connection between /192.168.200.121:60571 and /192.168.200.6:5708
-2019-06-28 09:45:18 [hz._hzInstance_1_dev.IO.thread-in-1] INFO  c.hazelcast.nio.tcp.TcpIpConnection - [192.168.200.121]:5701 [dev] [3.11.4] Initialized new cluster connection between /192.168.200.121:60568 and /192.168.200.6:5705
-2019-06-28 09:45:18 [hz._hzInstance_1_dev.IO.thread-in-0] INFO  c.hazelcast.nio.tcp.TcpIpConnection - [192.168.200.121]:5701 [dev] [3.11.4] Initialized new cluster connection between /192.168.200.121:60567 and /192.168.200.6:5704
-2019-06-28 09:45:19 [restartedMain] INFO  com.hazelcast.core.LifecycleService - [192.168.200.121]:5701 [dev] [3.11.4] [192.168.200.121]:5701 is STARTED
-2019-06-28 09:45:19 [restartedMain] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'firmaCrudController' defined in file [C:\Users\aqilp\IdeaProjects\az.contasoft\xmies\xmies_firma\target\classes\az\contasoft\xmies_firma\api\crudServices\FirmaCrudController.class]: Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'firmaCrudService' defined in file [C:\Users\aqilp\IdeaProjects\az.contasoft\xmies\xmies_firma\target\classes\az\contasoft\xmies_firma\api\crudServices\internalServices\FirmaCrudService.class]: Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'hazelcastUtility' defined in file [C:\Users\aqilp\IdeaProjects\az.contasoft\xmies\xmies_firma\target\classes\az\contasoft\xmies_firma\util\HazelcastUtility.class]: Unsatisfied dependency expressed through constructor parameter 2; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'com.hazelcast.core.IList<az.contasoft.xmies_firma.db.entity.Firma>' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {}
-2019-06-28 09:45:19 [restartedMain] INFO  com.hazelcast.core.LifecycleService - [192.168.200.121]:5701 [dev] [3.11.4] [192.168.200.121]:5701 is SHUTTING_DOWN
-2019-06-28 09:45:20 [restartedMain] INFO  com.hazelcast.instance.Node - [192.168.200.121]:5701 [dev] [3.11.4] Shutting down multicast service...
-2019-06-28 09:45:20 [restartedMain] INFO  com.hazelcast.instance.Node - [192.168.200.121]:5701 [dev] [3.11.4] Shutting down connection manager...
-2019-06-28 09:45:20 [restartedMain] INFO  c.hazelcast.nio.tcp.TcpIpConnection - [192.168.200.121]:5701 [dev] [3.11.4] Connection[id=4, /192.168.200.121:60567->/192.168.200.6:5704, endpoint=[192.168.200.6]:5704, alive=false, type=MEMBER] closed. Reason: TcpIpConnectionManager is stopping
-2019-06-28 09:45:20 [restartedMain] INFO  c.hazelcast.nio.tcp.TcpIpConnection - [192.168.200.121]:5701 [dev] [3.11.4] Connection[id=7, /192.168.200.121:60568->/192.168.200.6:5705, endpoint=[192.168.200.6]:5705, alive=false, type=MEMBER] closed. Reason: TcpIpConnectionManager is stopping
-2019-06-28 09:45:20 [restartedMain] INFO  c.hazelcast.nio.tcp.TcpIpConnection - [192.168.200.121]:5701 [dev] [3.11.4] Connection[id=3, /192.168.200.121:60566->/192.168.200.6:5703, endpoint=[192.168.200.6]:5703, alive=false, type=MEMBER] closed. Reason: TcpIpConnectionManager is stopping
-2019-06-28 09:45:20 [restartedMain] INFO  c.hazelcast.nio.tcp.TcpIpConnection - [192.168.200.121]:5701 [dev] [3.11.4] Connection[id=8, /192.168.200.121:60571->/192.168.200.6:5708, endpoint=[192.168.200.6]:5708, alive=false, type=MEMBER] closed. Reason: TcpIpConnectionManager is stopping
-2019-06-28 09:45:20 [restartedMain] INFO  c.hazelcast.nio.tcp.TcpIpConnection - [192.168.200.121]:5701 [dev] [3.11.4] Connection[id=2, /192.168.200.121:60562->/192.168.200.6:5701, endpoint=[192.168.200.6]:5701, alive=false, type=MEMBER] closed. Reason: TcpIpConnectionManager is stopping
-2019-06-28 09:45:20 [restartedMain] INFO  c.hazelcast.nio.tcp.TcpIpConnection - [192.168.200.121]:5701 [dev] [3.11.4] Connection[id=6, /192.168.200.121:60569->/192.168.200.6:5706, endpoint=[192.168.200.6]:5706, alive=false, type=MEMBER] closed. Reason: TcpIpConnectionManager is stopping
-2019-06-28 09:45:20 [restartedMain] INFO  c.hazelcast.nio.tcp.TcpIpConnection - [192.168.200.121]:5701 [dev] [3.11.4] Connection[id=5, /192.168.200.121:60570->/192.168.200.6:5707, endpoint=[192.168.200.6]:5707, alive=false, type=MEMBER] closed. Reason: TcpIpConnectionManager is stopping
-2019-06-28 09:45:20 [restartedMain] INFO  com.hazelcast.instance.Node - [192.168.200.121]:5701 [dev] [3.11.4] Shutting down node engine...
-2019-06-28 09:45:20 [restartedMain] INFO  com.hazelcast.instance.NodeExtension - [192.168.200.121]:5701 [dev] [3.11.4] Destroying node NodeExtension.
-2019-06-28 09:45:20 [restartedMain] INFO  com.hazelcast.instance.Node - [192.168.200.121]:5701 [dev] [3.11.4] Hazelcast Shutdown is completed in 959 ms.
-2019-06-28 09:45:20 [restartedMain] INFO  com.hazelcast.core.LifecycleService - [192.168.200.121]:5701 [dev] [3.11.4] [192.168.200.121]:5701 is SHUTDOWN
-2019-06-28 09:45:20 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
-2019-06-28 09:45:20 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
-2019-06-28 09:45:20 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
-2019-06-28 09:45:20 [restartedMain] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
-2019-06-28 09:45:20 [restartedMain] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener - 
+2019-09-30 11:58:16 - [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource getConnection 110 - HikariPool-1 - Starting...
+
+2019-09-30 11:58:19 - [restartedMain] ERROR com.zaxxer.hikari.pool.HikariPool throwPoolInitializationException 574 - HikariPool-1 - Exception during pool initialization.
+com.mysql.cj.jdbc.exceptions.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at com.mysql.cj.jdbc.exceptions.SQLError.createCommunicationsException(SQLError.java:174) ~[mysql-connector-java-8.0.16.jar:8.0.16]
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:64) ~[mysql-connector-java-8.0.16.jar:8.0.16]
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:835) ~[mysql-connector-java-8.0.16.jar:8.0.16]
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:455) ~[mysql-connector-java-8.0.16.jar:8.0.16]
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:240) ~[mysql-connector-java-8.0.16.jar:8.0.16]
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:199) ~[mysql-connector-java-8.0.16.jar:8.0.16]
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:136) ~[HikariCP-3.2.0.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:369) ~[HikariCP-3.2.0.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:198) ~[HikariCP-3.2.0.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:467) [HikariCP-3.2.0.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:541) [HikariCP-3.2.0.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:115) [HikariCP-3.2.0.jar:na]
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:112) [HikariCP-3.2.0.jar:na]
+	at com.zaxxer.hikari.HikariDataSource$$FastClassBySpringCGLIB$$eeb1ae86.invoke(<generated>) [HikariCP-3.2.0.jar:na]
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218) [spring-core-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:749) [spring-aop-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163) [spring-aop-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.aop.support.DelegatingIntroductionInterceptor.doProceed(DelegatingIntroductionInterceptor.java:136) [spring-aop-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.aop.support.DelegatingIntroductionInterceptor.invoke(DelegatingIntroductionInterceptor.java:124) [spring-aop-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) [spring-aop-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:688) [spring-aop-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at com.zaxxer.hikari.HikariDataSource$$EnhancerBySpringCGLIB$$9f6f8377.getConnection(<generated>) [HikariCP-3.2.0.jar:na]
+	at org.hibernate.engine.jdbc.connections.internal.DatasourceConnectionProviderImpl.getConnection(DatasourceConnectionProviderImpl.java:122) [hibernate-core-5.3.10.Final.jar:5.3.10.Final]
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess.obtainConnection(JdbcEnvironmentInitiator.java:180) [hibernate-core-5.3.10.Final.jar:5.3.10.Final]
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:68) [hibernate-core-5.3.10.Final.jar:5.3.10.Final]
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:35) [hibernate-core-5.3.10.Final.jar:5.3.10.Final]
+	at org.hibernate.boot.registry.internal.StandardServiceRegistryImpl.initiateService(StandardServiceRegistryImpl.java:94) [hibernate-core-5.3.10.Final.jar:5.3.10.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.createService(AbstractServiceRegistryImpl.java:263) [hibernate-core-5.3.10.Final.jar:5.3.10.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:237) [hibernate-core-5.3.10.Final.jar:5.3.10.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:214) [hibernate-core-5.3.10.Final.jar:5.3.10.Final]
+	at org.hibernate.id.factory.internal.DefaultIdentifierGeneratorFactory.injectServices(DefaultIdentifierGeneratorFactory.java:152) [hibernate-core-5.3.10.Final.jar:5.3.10.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.injectDependencies(AbstractServiceRegistryImpl.java:286) [hibernate-core-5.3.10.Final.jar:5.3.10.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:243) [hibernate-core-5.3.10.Final.jar:5.3.10.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:214) [hibernate-core-5.3.10.Final.jar:5.3.10.Final]
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.<init>(InFlightMetadataCollectorImpl.java:179) [hibernate-core-5.3.10.Final.jar:5.3.10.Final]
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:119) [hibernate-core-5.3.10.Final.jar:5.3.10.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.metadata(EntityManagerFactoryBuilderImpl.java:904) [hibernate-core-5.3.10.Final.jar:5.3.10.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:935) [hibernate-core-5.3.10.Final.jar:5.3.10.Final]
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:57) [spring-orm-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:365) [spring-orm-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:390) [spring-orm-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:377) [spring-orm-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:341) [spring-orm-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1837) [spring-beans-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1774) [spring-beans-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:593) [spring-beans-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:515) [spring-beans-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:320) [spring-beans-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222) ~[spring-beans-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:318) [spring-beans-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199) [spring-beans-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1105) ~[spring-context-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:867) ~[spring-context-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:549) ~[spring-context-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:140) ~[spring-boot-2.1.6.RELEASE.jar:2.1.6.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:742) ~[spring-boot-2.1.6.RELEASE.jar:2.1.6.RELEASE]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:389) ~[spring-boot-2.1.6.RELEASE.jar:2.1.6.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:311) ~[spring-boot-2.1.6.RELEASE.jar:2.1.6.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1213) ~[spring-boot-2.1.6.RELEASE.jar:2.1.6.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1202) ~[spring-boot-2.1.6.RELEASE.jar:2.1.6.RELEASE]
+	at az.contasoft.xmies_firma.XmiesFirmaApplication.main(XmiesFirmaApplication.java:14) ~[classes/:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_201]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_201]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_201]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_201]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49) ~[spring-boot-devtools-2.1.6.RELEASE.jar:2.1.6.RELEASE]
+Caused by: com.mysql.cj.exceptions.CJCommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method) ~[na:1.8.0_201]
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62) ~[na:1.8.0_201]
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45) ~[na:1.8.0_201]
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423) ~[na:1.8.0_201]
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:61) ~[mysql-connector-java-8.0.16.jar:8.0.16]
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:105) ~[mysql-connector-java-8.0.16.jar:8.0.16]
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:151) ~[mysql-connector-java-8.0.16.jar:8.0.16]
+	at com.mysql.cj.exceptions.ExceptionFactory.createCommunicationsException(ExceptionFactory.java:167) ~[mysql-connector-java-8.0.16.jar:8.0.16]
+	at com.mysql.cj.protocol.a.NativeSocketConnection.connect(NativeSocketConnection.java:91) ~[mysql-connector-java-8.0.16.jar:8.0.16]
+	at com.mysql.cj.NativeSession.connect(NativeSession.java:152) ~[mysql-connector-java-8.0.16.jar:8.0.16]
+	at com.mysql.cj.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:955) ~[mysql-connector-java-8.0.16.jar:8.0.16]
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:825) ~[mysql-connector-java-8.0.16.jar:8.0.16]
+	... 63 common frames omitted
+Caused by: java.net.ConnectException: Connection refused: connect
+	at java.net.DualStackPlainSocketImpl.waitForConnect(Native Method) ~[na:1.8.0_201]
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:85) ~[na:1.8.0_201]
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350) ~[na:1.8.0_201]
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206) ~[na:1.8.0_201]
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188) ~[na:1.8.0_201]
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172) ~[na:1.8.0_201]
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392) ~[na:1.8.0_201]
+	at java.net.Socket.connect(Socket.java:589) ~[na:1.8.0_201]
+	at com.mysql.cj.protocol.StandardSocketFactory.connect(StandardSocketFactory.java:155) ~[mysql-connector-java-8.0.16.jar:8.0.16]
+	at com.mysql.cj.protocol.a.NativeSocketConnection.connect(NativeSocketConnection.java:65) ~[mysql-connector-java-8.0.16.jar:8.0.16]
+	... 66 common frames omitted
+
+2019-09-30 11:58:19 - [restartedMain] WARN  o.h.e.j.e.i.JdbcEnvironmentInitiator initiateService 132 - HHH000342: Could not obtain connection to query metadata : Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+
+2019-09-30 11:58:19 - [restartedMain] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext refresh 557 - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Invocation of init method failed; nested exception is org.hibernate.service.spi.ServiceException: Unable to create requested service [org.hibernate.engine.jdbc.env.spi.JdbcEnvironment]
+
+2019-09-30 11:58:20 - [restartedMain] WARN  z.r.AsyncReporter$BoundedAsyncReporter close 312 - Timed out waiting for in-flight spans to send
+
+2019-09-30 11:58:21 - [restartedMain] INFO  o.a.catalina.core.StandardService log 173 - Stopping service [Tomcat]
+
+2019-09-30 11:58:21 - [restartedMain] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener logMessage 135 - 
 
 Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
-2019-06-28 09:45:21 [restartedMain] ERROR o.s.b.d.LoggingFailureAnalysisReporter - 
 
-***************************
-APPLICATION FAILED TO START
-***************************
-
-Description:
-
-Parameter 2 of constructor in az.contasoft.xmies_firma.util.HazelcastUtility required a bean of type 'com.hazelcast.core.IList' that could not be found.
-
-
-Action:
-
-Consider defining a bean of type 'com.hazelcast.core.IList' in your configuration.
-
-2019-06-28 09:53:10 [restartedMain] INFO  a.c.x.XmiesFirmaApplication - Starting XmiesFirmaApplication on DESKTOP-01C68AV with PID 9532 (C:\Users\aqilp\IdeaProjects\az.contasoft\xmies\xmies_firma\target\classes started by aqilp in C:\Users\aqilp\IdeaProjects\az.contasoft\xmies\xmies_firma)
-2019-06-28 09:53:10 [restartedMain] INFO  a.c.x.XmiesFirmaApplication - No active profile set, falling back to default profiles: default
-2019-06-28 09:53:10 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2019-06-28 09:53:10 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2019-06-28 09:53:11 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data repositories in DEFAULT mode.
-2019-06-28 09:53:11 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 42ms. Found 1 repository interfaces.
-2019-06-28 09:53:12 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$7b7a7151] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2019-06-28 09:53:12 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 12012 (http)
-2019-06-28 09:53:12 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
-2019-06-28 09:53:12 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.21]
-2019-06-28 09:53:12 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
-2019-06-28 09:53:12 [restartedMain] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1515 ms
-2019-06-28 09:53:12 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
-2019-06-28 09:53:13 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
-2019-06-28 09:53:13 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [
-	name: default
-	...]
-2019-06-28 09:53:13 [restartedMain] INFO  org.hibernate.Version - HHH000412: Hibernate Core {5.3.10.Final}
-2019-06-28 09:53:13 [restartedMain] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
-2019-06-28 09:53:13 [restartedMain] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
-2019-06-28 09:53:13 [restartedMain] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
-2019-06-28 09:53:13 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
-2019-06-28 09:53:13 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
-2019-06-28 09:53:14 [restartedMain] INFO  com.hazelcast.instance.AddressPicker - [LOCAL] [dev] [3.11.4] Prefer IPv4 stack is true, prefer IPv6 addresses is false
-2019-06-28 09:53:14 [restartedMain] INFO  com.hazelcast.instance.AddressPicker - [LOCAL] [dev] [3.11.4] Picked [192.168.200.121]:5701, using socket ServerSocket[addr=/0:0:0:0:0:0:0:0,localport=5701], bind any local is true
-2019-06-28 09:53:14 [restartedMain] INFO  com.hazelcast.system - [192.168.200.121]:5701 [dev] [3.11.4] Hazelcast 3.11.4 (20190509 - d5ad9d4) starting at [192.168.200.121]:5701
-2019-06-28 09:53:14 [restartedMain] INFO  com.hazelcast.system - [192.168.200.121]:5701 [dev] [3.11.4] Copyright (c) 2008-2019, Hazelcast, Inc. All Rights Reserved.
-2019-06-28 09:53:14 [restartedMain] INFO  com.hazelcast.instance.Node - [192.168.200.121]:5701 [dev] [3.11.4] A non-empty group password is configured for the Hazelcast member. Starting with Hazelcast version 3.8.2, members with the same group name, but with different group passwords (that do not use authentication) form a cluster. The group password configuration will be removed completely in a future release.
-2019-06-28 09:53:14 [restartedMain] INFO  c.h.s.i.o.impl.BackpressureRegulator - [192.168.200.121]:5701 [dev] [3.11.4] Backpressure is disabled
-2019-06-28 09:53:15 [restartedMain] INFO  com.hazelcast.instance.Node - [192.168.200.121]:5701 [dev] [3.11.4] Creating MulticastJoiner
-2019-06-28 09:53:15 [restartedMain] INFO  c.h.s.i.o.impl.OperationExecutorImpl - [192.168.200.121]:5701 [dev] [3.11.4] Starting 8 partition threads and 5 generic threads (1 dedicated for priority tasks)
-2019-06-28 09:53:15 [restartedMain] INFO  c.h.internal.diagnostics.Diagnostics - [192.168.200.121]:5701 [dev] [3.11.4] Diagnostics disabled. To enable add -Dhazelcast.diagnostics.enabled=true to the JVM arguments.
-2019-06-28 09:53:15 [restartedMain] INFO  com.hazelcast.core.LifecycleService - [192.168.200.121]:5701 [dev] [3.11.4] [192.168.200.121]:5701 is STARTING
-2019-06-28 09:53:15 [restartedMain] INFO  c.h.i.cluster.impl.MulticastJoiner - [192.168.200.121]:5701 [dev] [3.11.4] Trying to join to discovered node: [192.168.200.6]:5701
-2019-06-28 09:53:15 [hz._hzInstance_1_dev.cached.thread-2] INFO  com.hazelcast.nio.tcp.TcpIpConnector - [192.168.200.121]:5701 [dev] [3.11.4] Connecting to /192.168.200.6:5701, timeout: 0, bind-any: true
-2019-06-28 09:53:15 [hz._hzInstance_1_dev.IO.thread-in-0] INFO  c.hazelcast.nio.tcp.TcpIpConnection - [192.168.200.121]:5701 [dev] [3.11.4] Initialized new cluster connection between /192.168.200.121:60648 and /192.168.200.6:5701
-2019-06-28 09:53:21 [hz._hzInstance_1_dev.priority-generic-operation.thread-0] INFO  c.h.internal.cluster.ClusterService - [192.168.200.121]:5701 [dev] [3.11.4] 
-
-Members {size:8, ver:196} [
-	Member [192.168.200.6]:5701 - 53542f5e-f0db-47cc-9bb0-e06f8043f3a2
-	Member [192.168.200.6]:5703 - c079adab-dcd5-46a0-b619-8ea7c061a57f
-	Member [192.168.200.6]:5704 - f7b9f922-25c3-453c-992a-938f37953f8c
-	Member [192.168.200.6]:5705 - b3cf4c5c-050f-4a91-af0d-9cb642037335
-	Member [192.168.200.6]:5706 - ba52c03d-929e-4e5a-85d1-1c7f14400c76
-	Member [192.168.200.6]:5707 - 86a1aa42-9321-4b30-8204-3687f4a6adff
-	Member [192.168.200.6]:5708 - 132be8af-a0ab-4168-b963-ba83861055fe
-	Member [192.168.200.121]:5701 - 3ffe0061-c093-43d9-9ec3-a2046228c7f4 this
-]
-
-2019-06-28 09:53:21 [hz._hzInstance_1_dev.cached.thread-6] INFO  com.hazelcast.nio.tcp.TcpIpConnector - [192.168.200.121]:5701 [dev] [3.11.4] Connecting to /192.168.200.6:5703, timeout: 0, bind-any: true
-2019-06-28 09:53:21 [hz._hzInstance_1_dev.cached.thread-7] INFO  com.hazelcast.nio.tcp.TcpIpConnector - [192.168.200.121]:5701 [dev] [3.11.4] Connecting to /192.168.200.6:5704, timeout: 0, bind-any: true
-2019-06-28 09:53:21 [hz._hzInstance_1_dev.cached.thread-8] INFO  com.hazelcast.nio.tcp.TcpIpConnector - [192.168.200.121]:5701 [dev] [3.11.4] Connecting to /192.168.200.6:5705, timeout: 0, bind-any: true
-2019-06-28 09:53:21 [hz._hzInstance_1_dev.cached.thread-2] INFO  com.hazelcast.nio.tcp.TcpIpConnector - [192.168.200.121]:5701 [dev] [3.11.4] Connecting to /192.168.200.6:5707, timeout: 0, bind-any: true
-2019-06-28 09:53:21 [hz._hzInstance_1_dev.cached.thread-5] INFO  com.hazelcast.nio.tcp.TcpIpConnector - [192.168.200.121]:5701 [dev] [3.11.4] Connecting to /192.168.200.6:5706, timeout: 0, bind-any: true
-2019-06-28 09:53:21 [hz._hzInstance_1_dev.cached.thread-4] INFO  com.hazelcast.nio.tcp.TcpIpConnector - [192.168.200.121]:5701 [dev] [3.11.4] Connecting to /192.168.200.6:5708, timeout: 0, bind-any: true
-2019-06-28 09:53:21 [hz._hzInstance_1_dev.IO.thread-in-1] INFO  c.hazelcast.nio.tcp.TcpIpConnection - [192.168.200.121]:5701 [dev] [3.11.4] Initialized new cluster connection between /192.168.200.121:60652 and /192.168.200.6:5706
-2019-06-28 09:53:21 [hz._hzInstance_1_dev.IO.thread-in-1] INFO  c.hazelcast.nio.tcp.TcpIpConnection - [192.168.200.121]:5701 [dev] [3.11.4] Initialized new cluster connection between /192.168.200.121:60649 and /192.168.200.6:5703
-2019-06-28 09:53:21 [hz._hzInstance_1_dev.IO.thread-in-0] INFO  c.hazelcast.nio.tcp.TcpIpConnection - [192.168.200.121]:5701 [dev] [3.11.4] Initialized new cluster connection between /192.168.200.121:60651 and /192.168.200.6:5705
-2019-06-28 09:53:21 [hz._hzInstance_1_dev.IO.thread-in-2] INFO  c.hazelcast.nio.tcp.TcpIpConnection - [192.168.200.121]:5701 [dev] [3.11.4] Initialized new cluster connection between /192.168.200.121:60653 and /192.168.200.6:5707
-2019-06-28 09:53:21 [hz._hzInstance_1_dev.IO.thread-in-2] INFO  c.hazelcast.nio.tcp.TcpIpConnection - [192.168.200.121]:5701 [dev] [3.11.4] Initialized new cluster connection between /192.168.200.121:60650 and /192.168.200.6:5704
-2019-06-28 09:53:21 [hz._hzInstance_1_dev.IO.thread-in-0] INFO  c.hazelcast.nio.tcp.TcpIpConnection - [192.168.200.121]:5701 [dev] [3.11.4] Initialized new cluster connection between /192.168.200.121:60654 and /192.168.200.6:5708
-2019-06-28 09:53:22 [restartedMain] INFO  com.hazelcast.core.LifecycleService - [192.168.200.121]:5701 [dev] [3.11.4] [192.168.200.121]:5701 is STARTED
-2019-06-28 09:53:22 [restartedMain] INFO  a.c.x.util.HazelcastUtility - Starting to cache firms
-2019-06-28 09:53:22 [restartedMain] INFO  o.h.h.i.QueryTranslatorFactoryInitiator - HHH000397: Using ASTQueryTranslatorFactory
-2019-06-28 09:53:22 [hz._hzInstance_1_dev.HealthMonitor] INFO  c.h.i.diagnostics.HealthMonitor - [192.168.200.121]:5701 [dev] [3.11.4] processors=8, physical.memory.total=7.9G, physical.memory.free=2.4G, swap.space.total=17.1G, swap.space.free=6.1G, heap.memory.used=326.3M, heap.memory.free=245.2M, heap.memory.total=571.5M, heap.memory.max=1.8G, heap.memory.used/total=57.09%, heap.memory.used/max=18.15%, minor.gc.count=12, minor.gc.time=77ms, major.gc.count=3, major.gc.time=279ms, load.process=34.13%, load.system=73.33%, load.systemAverage=n/a thread.count=68, thread.peakCount=68, cluster.timeDiff=-2285, event.q.size=0, executor.q.async.size=0, executor.q.client.size=0, executor.q.client.query.size=0, executor.q.client.blocking.size=0, executor.q.query.size=0, executor.q.scheduled.size=0, executor.q.io.size=0, executor.q.system.size=0, executor.q.operations.size=0, executor.q.priorityOperation.size=0, operations.completed.count=204, executor.q.mapLoad.size=0, executor.q.mapLoadAllKeys.size=0, executor.q.cluster.size=0, executor.q.response.size=0, operations.running.count=0, operations.pending.invocations.percentage=0.00%, operations.pending.invocations.count=0, proxy.count=0, clientEndpoint.count=0, connection.active.count=7, client.connection.count=0, connection.count=7
-2019-06-28 09:53:23 [restartedMain] INFO  a.c.x.util.HazelcastUtility - firma : Firma{idFirma=6, adi='Zeytun', address='Moskva', telefon='0519999900', isActive=1}
-2019-06-28 09:53:23 [restartedMain] INFO  a.c.x.util.HazelcastUtility - firma : Firma{idFirma=5, adi='Zeferan', address='Baki', telefon='0554444444', isActive=1}
-2019-06-28 09:53:23 [restartedMain] INFO  a.c.x.util.HazelcastUtility - firma : Firma{idFirma=4, adi='avromed', address='SUMQAYIT', telefon='0505005050', isActive=1}
-2019-06-28 09:53:23 [restartedMain] INFO  a.c.x.util.HazelcastUtility - firma : Firma{idFirma=3, adi='Zeytun', address='xirdalan', telefon='0515464611', isActive=1}
-2019-06-28 09:53:23 [restartedMain] INFO  a.c.x.util.HazelcastUtility - firma : Firma{idFirma=2, adi='zeytun', address='banqladesh', telefon='021051305', isActive=1}
-2019-06-28 09:53:23 [restartedMain] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
-2019-06-28 09:53:23 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration$JpaWebMvcConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2019-06-28 09:53:23 [restartedMain] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 2 endpoint(s) beneath base path '/actuator'
-2019-06-28 09:53:23 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 12012 (http) with context path ''
-2019-06-28 09:53:23 [restartedMain] INFO  a.c.x.XmiesFirmaApplication - Started XmiesFirmaApplication in 13.077 seconds (JVM running for 13.857)
-2019-06-28 09:53:24 [RMI TCP Connection(3)-192.168.200.121] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
-2019-06-28 09:53:24 [RMI TCP Connection(3)-192.168.200.121] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
-2019-06-28 09:53:24 [RMI TCP Connection(3)-192.168.200.121] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 7 ms
-2019-06-28 10:07:53 [hz._hzInstance_1_dev.IO.thread-in-1] WARN  c.hazelcast.nio.tcp.TcpIpConnection - [192.168.200.121]:5701 [dev] [3.11.4] Connection[id=7, /192.168.200.121:60654->/192.168.200.6:5708, endpoint=[192.168.200.6]:5708, alive=false, type=MEMBER] closed. Reason: Exception in Connection[id=7, /192.168.200.121:60654->/192.168.200.6:5708, endpoint=[192.168.200.6]:5708, alive=true, type=MEMBER], thread=hz._hzInstance_1_dev.IO.thread-in-1
-java.io.IOException: An existing connection was forcibly closed by the remote host
-	at sun.nio.ch.SocketDispatcher.read0(Native Method)
-	at sun.nio.ch.SocketDispatcher.read(SocketDispatcher.java:43)
-	at sun.nio.ch.IOUtil.readIntoNativeBuffer(IOUtil.java:223)
-	at sun.nio.ch.IOUtil.read(IOUtil.java:197)
-	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:380)
-	at com.hazelcast.internal.networking.nio.NioInboundPipeline.process(NioInboundPipeline.java:113)
-	at com.hazelcast.internal.networking.nio.NioThread.processSelectionKey(NioThread.java:368)
-	at com.hazelcast.internal.networking.nio.NioThread.processSelectionKeys(NioThread.java:353)
-	at com.hazelcast.internal.networking.nio.NioThread.selectLoop(NioThread.java:279)
-	at com.hazelcast.internal.networking.nio.NioThread.run(NioThread.java:234)
-2019-06-28 10:07:53 [hz._hzInstance_1_dev.cached.thread-4] INFO  com.hazelcast.nio.tcp.TcpIpConnector - [192.168.200.121]:5701 [dev] [3.11.4] Connecting to /192.168.200.6:5708, timeout: 0, bind-any: true
-2019-06-28 10:07:53 [hz._hzInstance_1_dev.IO.thread-in-0] WARN  c.hazelcast.nio.tcp.TcpIpConnection - [192.168.200.121]:5701 [dev] [3.11.4] Connection[id=1, /192.168.200.121:60648->/192.168.200.6:5701, endpoint=[192.168.200.6]:5701, alive=false, type=MEMBER] closed. Reason: Exception in Connection[id=1, /192.168.200.121:60648->/192.168.200.6:5701, endpoint=[192.168.200.6]:5701, alive=true, type=MEMBER], thread=hz._hzInstance_1_dev.IO.thread-in-0
-java.io.IOException: An existing connection was forcibly closed by the remote host
-	at sun.nio.ch.SocketDispatcher.read0(Native Method)
-	at sun.nio.ch.SocketDispatcher.read(SocketDispatcher.java:43)
-	at sun.nio.ch.IOUtil.readIntoNativeBuffer(IOUtil.java:223)
-	at sun.nio.ch.IOUtil.read(IOUtil.java:197)
-	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:380)
-	at com.hazelcast.internal.networking.nio.NioInboundPipeline.process(NioInboundPipeline.java:113)
-	at com.hazelcast.internal.networking.nio.NioThread.processSelectionKey(NioThread.java:368)
-	at com.hazelcast.internal.networking.nio.NioThread.processSelectionKeys(NioThread.java:353)
-	at com.hazelcast.internal.networking.nio.NioThread.selectLoop(NioThread.java:279)
-	at com.hazelcast.internal.networking.nio.NioThread.run(NioThread.java:234)
-2019-06-28 10:07:53 [hz._hzInstance_1_dev.IO.thread-in-2] WARN  c.hazelcast.nio.tcp.TcpIpConnection - [192.168.200.121]:5701 [dev] [3.11.4] Connection[id=2, /192.168.200.121:60652->/192.168.200.6:5706, endpoint=[192.168.200.6]:5706, alive=false, type=MEMBER] closed. Reason: Exception in Connection[id=2, /192.168.200.121:60652->/192.168.200.6:5706, endpoint=[192.168.200.6]:5706, alive=true, type=MEMBER], thread=hz._hzInstance_1_dev.IO.thread-in-2
-java.io.IOException: An existing connection was forcibly closed by the remote host
-	at sun.nio.ch.SocketDispatcher.read0(Native Method)
-	at sun.nio.ch.SocketDispatcher.read(SocketDispatcher.java:43)
-	at sun.nio.ch.IOUtil.readIntoNativeBuffer(IOUtil.java:223)
-	at sun.nio.ch.IOUtil.read(IOUtil.java:197)
-	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:380)
-	at com.hazelcast.internal.networking.nio.NioInboundPipeline.process(NioInboundPipeline.java:113)
-	at com.hazelcast.internal.networking.nio.NioThread.processSelectionKey(NioThread.java:368)
-	at com.hazelcast.internal.networking.nio.NioThread.processSelectionKeys(NioThread.java:353)
-	at com.hazelcast.internal.networking.nio.NioThread.selectLoop(NioThread.java:279)
-	at com.hazelcast.internal.networking.nio.NioThread.run(NioThread.java:234)
-2019-06-28 10:07:53 [hz._hzInstance_1_dev.cached.thread-6] INFO  com.hazelcast.nio.tcp.TcpIpConnector - [192.168.200.121]:5701 [dev] [3.11.4] Connecting to /192.168.200.6:5701, timeout: 0, bind-any: true
-2019-06-28 10:07:53 [hz._hzInstance_1_dev.cached.thread-9] INFO  com.hazelcast.nio.tcp.TcpIpConnector - [192.168.200.121]:5701 [dev] [3.11.4] Connecting to /192.168.200.6:5706, timeout: 0, bind-any: true
-2019-06-28 10:08:14 [hz._hzInstance_1_dev.cached.thread-6] INFO  com.hazelcast.nio.tcp.TcpIpConnector - [192.168.200.121]:5701 [dev] [3.11.4] Could not connect to: /192.168.200.6:5701. Reason: SocketException[Connection timed out: connect to address /192.168.200.6:5701]
-2019-06-28 10:08:14 [hz._hzInstance_1_dev.cached.thread-6] INFO  com.hazelcast.nio.tcp.TcpIpConnector - [192.168.200.121]:5701 [dev] [3.11.4] Connecting to /192.168.200.6:5701, timeout: 0, bind-any: true
-2019-06-28 10:08:18 [hz._hzInstance_1_dev.priority-generic-operation.thread-0] WARN  c.h.i.c.impl.ClusterHeartbeatManager - [192.168.200.121]:5701 [dev] [3.11.4] Ignoring heartbeat from Member [192.168.200.6]:5703 - c079adab-dcd5-46a0-b619-8ea7c061a57f since it is expired (now: 2019-06-28 10:08:06.962, timestamp: 2019-06-28 10:07:25.019)
-2019-06-28 10:08:18 [hz._hzInstance_1_dev.generic-operation.thread-3] WARN  c.h.i.c.impl.ClusterHeartbeatManager - [192.168.200.121]:5701 [dev] [3.11.4] Ignoring heartbeat from Member [192.168.200.6]:5703 - c079adab-dcd5-46a0-b619-8ea7c061a57f since it is expired (now: 2019-06-28 10:08:06.969, timestamp: 2019-06-28 10:07:30.019)
-2019-06-28 10:08:18 [hz._hzInstance_1_dev.generic-operation.thread-2] WARN  c.h.i.c.impl.ClusterHeartbeatManager - [192.168.200.121]:5701 [dev] [3.11.4] Ignoring heartbeat from Member [192.168.200.6]:5703 - c079adab-dcd5-46a0-b619-8ea7c061a57f since it is expired (now: 2019-06-28 10:08:06.971, timestamp: 2019-06-28 10:07:35.019)
-2019-06-28 10:08:20 [hz._hzInstance_1_dev.cached.thread-5] WARN  c.h.i.c.impl.ClusterHeartbeatManager - [192.168.200.121]:5701 [dev] [3.11.4] This node does not have a connection to Member [192.168.200.6]:5701 - 53542f5e-f0db-47cc-9bb0-e06f8043f3a2
-2019-06-28 10:08:25 [hz._hzInstance_1_dev.cached.thread-5] WARN  c.h.i.c.impl.ClusterHeartbeatManager - [192.168.200.121]:5701 [dev] [3.11.4] This node does not have a connection to Member [192.168.200.6]:5701 - 53542f5e-f0db-47cc-9bb0-e06f8043f3a2
-2019-06-28 10:08:25 [hz._hzInstance_1_dev.cached.thread-5] WARN  c.h.i.c.impl.ClusterHeartbeatManager - [192.168.200.121]:5701 [dev] [3.11.4] This node does not have a connection to Member [192.168.200.6]:5706 - ba52c03d-929e-4e5a-85d1-1c7f14400c76
-2019-06-28 10:08:28 [hz._hzInstance_1_dev.generic-operation.thread-1] WARN  c.h.i.c.impl.ClusterHeartbeatManager - [192.168.200.121]:5701 [dev] [3.11.4] Ignoring heartbeat from Member [192.168.200.6]:5705 - b3cf4c5c-050f-4a91-af0d-9cb642037335 since it is expired (now: 2019-06-28 10:08:16.878, timestamp: 2019-06-28 10:07:28.513)
-2019-06-28 10:08:28 [hz._hzInstance_1_dev.priority-generic-operation.thread-0] WARN  c.h.i.c.impl.ClusterHeartbeatManager - [192.168.200.121]:5701 [dev] [3.11.4] Ignoring heartbeat from Member [192.168.200.6]:5705 - b3cf4c5c-050f-4a91-af0d-9cb642037335 since it is expired (now: 2019-06-28 10:08:16.881, timestamp: 2019-06-28 10:07:23.513)
-2019-06-28 10:08:29 [hz._hzInstance_1_dev.priority-generic-operation.thread-0] WARN  c.h.i.c.impl.ClusterHeartbeatManager - [192.168.200.121]:5701 [dev] [3.11.4] Ignoring heartbeat from Member [192.168.200.6]:5707 - 86a1aa42-9321-4b30-8204-3687f4a6adff since it is expired (now: 2019-06-28 10:08:17.622, timestamp: 2019-06-28 10:07:23.026)
-2019-06-28 10:08:29 [hz._hzInstance_1_dev.generic-operation.thread-3] WARN  c.h.i.c.impl.ClusterHeartbeatManager - [192.168.200.121]:5701 [dev] [3.11.4] Ignoring heartbeat from Member [192.168.200.6]:5707 - 86a1aa42-9321-4b30-8204-3687f4a6adff since it is expired (now: 2019-06-28 10:08:17.623, timestamp: 2019-06-28 10:07:28.026)
-2019-06-28 10:08:29 [hz._hzInstance_1_dev.generic-operation.thread-2] WARN  c.h.i.c.impl.ClusterHeartbeatManager - [192.168.200.121]:5701 [dev] [3.11.4] Ignoring heartbeat from Member [192.168.200.6]:5707 - 86a1aa42-9321-4b30-8204-3687f4a6adff since it is expired (now: 2019-06-28 10:08:17.624, timestamp: 2019-06-28 10:07:33.026)
-2019-06-28 10:08:29 [hz._hzInstance_1_dev.generic-operation.thread-0] WARN  c.h.i.c.impl.ClusterHeartbeatManager - [192.168.200.121]:5701 [dev] [3.11.4] Ignoring heartbeat from Member [192.168.200.6]:5707 - 86a1aa42-9321-4b30-8204-3687f4a6adff since it is expired (now: 2019-06-28 10:08:17.624, timestamp: 2019-06-28 10:07:38.026)
-2019-06-28 10:08:30 [hz._hzInstance_1_dev.cached.thread-5] WARN  c.h.i.c.impl.ClusterHeartbeatManager - [192.168.200.121]:5701 [dev] [3.11.4] This node does not have a connection to Member [192.168.200.6]:5701 - 53542f5e-f0db-47cc-9bb0-e06f8043f3a2
-2019-06-28 10:08:30 [hz._hzInstance_1_dev.cached.thread-5] WARN  c.h.i.c.impl.ClusterHeartbeatManager - [192.168.200.121]:5701 [dev] [3.11.4] Suspecting Member [192.168.200.6]:5701 - 53542f5e-f0db-47cc-9bb0-e06f8043f3a2 because it has not sent any heartbeats since 2019-06-28 10:07:18.631. Now: 2019-06-28 10:08:18.971, heartbeat timeout: 60000 ms, suspicion level: 1.00
-2019-06-28 10:08:30 [hz._hzInstance_1_dev.cached.thread-5] WARN  c.h.i.cluster.impl.MembershipManager - [192.168.200.121]:5701 [dev] [3.11.4] Member [192.168.200.6]:5701 - 53542f5e-f0db-47cc-9bb0-e06f8043f3a2 is suspected to be dead for reason: Suspecting Member [192.168.200.6]:5701 - 53542f5e-f0db-47cc-9bb0-e06f8043f3a2 because it has not sent any heartbeats since 2019-06-28 10:07:18.631. Now: 2019-06-28 10:08:18.971, heartbeat timeout: 60000 ms, suspicion level: 1.00
-2019-06-28 10:08:30 [hz._hzInstance_1_dev.cached.thread-5] WARN  c.h.i.c.impl.ClusterHeartbeatManager - [192.168.200.121]:5701 [dev] [3.11.4] This node does not have a connection to Member [192.168.200.6]:5706 - ba52c03d-929e-4e5a-85d1-1c7f14400c76
-2019-06-28 10:08:30 [hz._hzInstance_1_dev.cached.thread-5] WARN  c.h.i.c.impl.ClusterHeartbeatManager - [192.168.200.121]:5701 [dev] [3.11.4] This node does not have a connection to Member [192.168.200.6]:5708 - 132be8af-a0ab-4168-b963-ba83861055fe
-2019-06-28 10:08:31 [hz._hzInstance_1_dev.IO.thread-in-0] INFO  c.hazelcast.nio.tcp.TcpIpConnection - [192.168.200.121]:5701 [dev] [3.11.4] Initialized new cluster connection between /192.168.200.121:60786 and /192.168.200.6:5706
-2019-06-28 10:08:31 [hz._hzInstance_1_dev.priority-generic-operation.thread-0] WARN  c.h.i.c.impl.ClusterHeartbeatManager - [192.168.200.121]:5701 [dev] [3.11.4] Ignoring heartbeat from Member [192.168.200.6]:5704 - f7b9f922-25c3-453c-992a-938f37953f8c since it is expired (now: 2019-06-28 10:08:19.734, timestamp: 2019-06-28 10:07:21.557)
-2019-06-28 10:08:31 [hz._hzInstance_1_dev.IO.thread-in-1] INFO  c.hazelcast.nio.tcp.TcpIpConnection - [192.168.200.121]:5701 [dev] [3.11.4] Initialized new cluster connection between /192.168.200.121:60788 and /192.168.200.6:5701
-2019-06-28 10:08:32 [hz._hzInstance_1_dev.IO.thread-in-2] INFO  c.hazelcast.nio.tcp.TcpIpConnection - [192.168.200.121]:5701 [dev] [3.11.4] Connection[id=6, /192.168.200.121:60651->/192.168.200.6:5705, endpoint=[192.168.200.6]:5705, alive=false, type=MEMBER] closed. Reason: Connection closed by the other side
-2019-06-28 10:08:32 [hz._hzInstance_1_dev.priority-generic-operation.thread-0] WARN  c.h.i.c.impl.ClusterHeartbeatManager - [192.168.200.121]:5701 [dev] [3.11.4] Ignoring heartbeat from Member [192.168.200.6]:5705 - b3cf4c5c-050f-4a91-af0d-9cb642037335 since it is expired (now: 2019-06-28 10:08:21.141, timestamp: 2019-06-28 10:07:33.513)
-2019-06-28 10:08:32 [hz._hzInstance_1_dev.cached.thread-6] INFO  com.hazelcast.nio.tcp.TcpIpConnector - [192.168.200.121]:5701 [dev] [3.11.4] Connecting to /192.168.200.6:5705, timeout: 0, bind-any: true
-2019-06-28 10:08:32 [hz._hzInstance_1_dev.generic-operation.thread-3] WARN  c.h.i.c.impl.ClusterHeartbeatManager - [192.168.200.121]:5701 [dev] [3.11.4] Ignoring heartbeat from Member [192.168.200.6]:5705 - b3cf4c5c-050f-4a91-af0d-9cb642037335 since it is expired (now: 2019-06-28 10:08:21.144, timestamp: 2019-06-28 10:07:38.513)
-2019-06-28 10:08:32 [hz._hzInstance_1_dev.generic-operation.thread-2] WARN  c.h.i.c.impl.ClusterHeartbeatManager - [192.168.200.121]:5701 [dev] [3.11.4] Ignoring heartbeat from Member [192.168.200.6]:5705 - b3cf4c5c-050f-4a91-af0d-9cb642037335 since it is expired (now: 2019-06-28 10:08:21.147, timestamp: 2019-06-28 10:07:43.513)
-2019-06-28 10:08:32 [hz._hzInstance_1_dev.generic-operation.thread-0] WARN  c.h.i.c.impl.ClusterHeartbeatManager - [192.168.200.121]:5701 [dev] [3.11.4] Ignoring heartbeat from Member [192.168.200.6]:5705 - b3cf4c5c-050f-4a91-af0d-9cb642037335 since it is expired (now: 2019-06-28 10:08:21.147, timestamp: 2019-06-28 10:07:48.513)
-2019-06-28 10:08:32 [hz._hzInstance_1_dev.priority-generic-operation.thread-0] WARN  c.h.i.c.impl.ClusterHeartbeatManager - [192.168.200.121]:5701 [dev] [3.11.4] Ignoring heartbeat from Member [192.168.200.6]:5707 - 86a1aa42-9321-4b30-8204-3687f4a6adff since it is expired (now: 2019-06-28 10:08:21.147, timestamp: 2019-06-28 10:07:43.026)
-2019-06-28 10:08:32 [hz._hzInstance_1_dev.generic-operation.thread-3] WARN  c.h.i.c.impl.ClusterHeartbeatManager - [192.168.200.121]:5701 [dev] [3.11.4] Ignoring heartbeat from Member [192.168.200.6]:5707 - 86a1aa42-9321-4b30-8204-3687f4a6adff since it is expired (now: 2019-06-28 10:08:21.148, timestamp: 2019-06-28 10:07:48.026)
-2019-06-28 10:08:32 [hz._hzInstance_1_dev.generic-operation.thread-3] WARN  c.h.i.c.impl.ClusterHeartbeatManager - [192.168.200.121]:5701 [dev] [3.11.4] Ignoring heartbeat from Member [192.168.200.6]:5703 - c079adab-dcd5-46a0-b619-8ea7c061a57f since it is expired (now: 2019-06-28 10:08:21.149, timestamp: 2019-06-28 10:07:40.019)
-2019-06-28 10:08:32 [hz._hzInstance_1_dev.generic-operation.thread-3] WARN  c.h.i.c.impl.ClusterHeartbeatManager - [192.168.200.121]:5701 [dev] [3.11.4] Ignoring heartbeat from Member [192.168.200.6]:5703 - c079adab-dcd5-46a0-b619-8ea7c061a57f since it is expired (now: 2019-06-28 10:08:21.149, timestamp: 2019-06-28 10:07:50.019)
-2019-06-28 10:08:32 [hz._hzInstance_1_dev.generic-operation.thread-3] WARN  c.h.i.c.impl.ClusterHeartbeatManager - [192.168.200.121]:5701 [dev] [3.11.4] Ignoring heartbeat from Member [192.168.200.6]:5704 - f7b9f922-25c3-453c-992a-938f37953f8c since it is expired (now: 2019-06-28 10:08:21.149, timestamp: 2019-06-28 10:07:26.557)
-2019-06-28 10:08:32 [hz._hzInstance_1_dev.generic-operation.thread-3] WARN  c.h.i.c.impl.ClusterHeartbeatManager - [192.168.200.121]:5701 [dev] [3.11.4] Ignoring heartbeat from Member [192.168.200.6]:5704 - f7b9f922-25c3-453c-992a-938f37953f8c since it is expired (now: 2019-06-28 10:08:21.149, timestamp: 2019-06-28 10:07:36.557)
-2019-06-28 10:08:32 [hz._hzInstance_1_dev.generic-operation.thread-3] WARN  c.h.i.c.impl.ClusterHeartbeatManager - [192.168.200.121]:5701 [dev] [3.11.4] Ignoring heartbeat from Member [192.168.200.6]:5704 - f7b9f922-25c3-453c-992a-938f37953f8c since it is expired (now: 2019-06-28 10:08:21.150, timestamp: 2019-06-28 10:07:41.557)
-2019-06-28 10:08:32 [hz._hzInstance_1_dev.generic-operation.thread-3] WARN  c.h.i.c.impl.ClusterHeartbeatManager - [192.168.200.121]:5701 [dev] [3.11.4] Ignoring heartbeat from Member [192.168.200.6]:5704 - f7b9f922-25c3-453c-992a-938f37953f8c since it is expired (now: 2019-06-28 10:08:21.150, timestamp: 2019-06-28 10:07:46.557)
-2019-06-28 10:08:32 [hz._hzInstance_1_dev.generic-operation.thread-0] WARN  c.h.i.c.impl.ClusterHeartbeatManager - [192.168.200.121]:5701 [dev] [3.11.4] Ignoring heartbeat from Member [192.168.200.6]:5703 - c079adab-dcd5-46a0-b619-8ea7c061a57f since it is expired (now: 2019-06-28 10:08:21.151, timestamp: 2019-06-28 10:07:45.019)
-2019-06-28 10:08:32 [hz._hzInstance_1_dev.priority-generic-operation.thread-0] WARN  c.h.i.c.impl.ClusterHeartbeatManager - [192.168.200.121]:5701 [dev] [3.11.4] Ignoring heartbeat from Member [192.168.200.6]:5704 - f7b9f922-25c3-453c-992a-938f37953f8c since it is expired (now: 2019-06-28 10:08:21.151, timestamp: 2019-06-28 10:07:31.557)
-2019-06-28 10:08:33 [hz._hzInstance_1_dev.IO.thread-in-1] INFO  c.hazelcast.nio.tcp.TcpIpConnection - [192.168.200.121]:5701 [dev] [3.11.4] Connection[id=3, /192.168.200.121:60653->/192.168.200.6:5707, endpoint=[192.168.200.6]:5707, alive=false, type=MEMBER] closed. Reason: Connection closed by the other side
-2019-06-28 10:08:33 [hz._hzInstance_1_dev.IO.thread-in-2] INFO  c.hazelcast.nio.tcp.TcpIpConnection - [192.168.200.121]:5701 [dev] [3.11.4] Connection[id=5, /192.168.200.121:60649->/192.168.200.6:5703, endpoint=[192.168.200.6]:5703, alive=false, type=MEMBER] closed. Reason: Connection closed by the other side
-2019-06-28 10:08:33 [hz._hzInstance_1_dev.cached.thread-5] INFO  com.hazelcast.nio.tcp.TcpIpConnector - [192.168.200.121]:5701 [dev] [3.11.4] Connecting to /192.168.200.6:5707, timeout: 0, bind-any: true
-2019-06-28 10:08:33 [hz._hzInstance_1_dev.cached.thread-4] INFO  com.hazelcast.nio.tcp.TcpIpConnector - [192.168.200.121]:5701 [dev] [3.11.4] Connecting to /192.168.200.6:5703, timeout: 0, bind-any: true
-2019-06-28 10:08:33 [hz._hzInstance_1_dev.IO.thread-in-2] INFO  c.hazelcast.nio.tcp.TcpIpConnection - [192.168.200.121]:5701 [dev] [3.11.4] Connection[id=4, /192.168.200.121:60650->/192.168.200.6:5704, endpoint=[192.168.200.6]:5704, alive=false, type=MEMBER] closed. Reason: Connection closed by the other side
-2019-06-28 10:08:33 [hz._hzInstance_1_dev.cached.thread-6] INFO  com.hazelcast.nio.tcp.TcpIpConnector - [192.168.200.121]:5701 [dev] [3.11.4] Connecting to /192.168.200.6:5704, timeout: 0, bind-any: true
-2019-06-28 10:08:35 [hz._hzInstance_1_dev.cached.thread-4] WARN  c.h.i.c.impl.ClusterHeartbeatManager - [192.168.200.121]:5701 [dev] [3.11.4] Suspecting Member [192.168.200.6]:5706 - ba52c03d-929e-4e5a-85d1-1c7f14400c76 because it has not sent any heartbeats since 2019-06-28 10:07:21.533. Now: 2019-06-28 10:08:23.971, heartbeat timeout: 60000 ms, suspicion level: 1.00
-2019-06-28 10:08:35 [hz._hzInstance_1_dev.cached.thread-4] WARN  c.h.i.cluster.impl.MembershipManager - [192.168.200.121]:5701 [dev] [3.11.4] Member [192.168.200.6]:5706 - ba52c03d-929e-4e5a-85d1-1c7f14400c76 is suspected to be dead for reason: Suspecting Member [192.168.200.6]:5706 - ba52c03d-929e-4e5a-85d1-1c7f14400c76 because it has not sent any heartbeats since 2019-06-28 10:07:21.533. Now: 2019-06-28 10:08:23.971, heartbeat timeout: 60000 ms, suspicion level: 1.00
-2019-06-28 10:08:35 [hz._hzInstance_1_dev.cached.thread-4] INFO  c.hazelcast.nio.tcp.TcpIpConnection - [192.168.200.121]:5701 [dev] [3.11.4] Connection[id=8, /192.168.200.121:60786->/192.168.200.6:5706, endpoint=[192.168.200.6]:5706, alive=false, type=MEMBER] closed. Reason: Suspecting Member [192.168.200.6]:5706 - ba52c03d-929e-4e5a-85d1-1c7f14400c76 because it has not sent any heartbeats since 2019-06-28 10:07:21.533. Now: 2019-06-28 10:08:23.971, heartbeat timeout: 60000 ms, suspicion level: 1.00
-2019-06-28 10:08:35 [hz._hzInstance_1_dev.cached.thread-4] WARN  c.h.i.c.impl.ClusterHeartbeatManager - [192.168.200.121]:5701 [dev] [3.11.4] This node does not have a connection to Member [192.168.200.6]:5708 - 132be8af-a0ab-4168-b963-ba83861055fe
-2019-06-28 10:08:35 [hz._hzInstance_1_dev.IO.thread-in-2] INFO  c.hazelcast.nio.tcp.TcpIpConnection - [192.168.200.121]:5701 [dev] [3.11.4] Initialized new cluster connection between /192.168.200.121:60789 and /192.168.200.6:5705
-2019-06-28 10:08:35 [hz._hzInstance_1_dev.IO.thread-in-1] INFO  c.hazelcast.nio.tcp.TcpIpConnection - [192.168.200.121]:5701 [dev] [3.11.4] Initialized new cluster connection between /192.168.200.121:60791 and /192.168.200.6:5703
-2019-06-28 10:08:35 [hz._hzInstance_1_dev.IO.thread-in-0] INFO  c.hazelcast.nio.tcp.TcpIpConnection - [192.168.200.121]:5701 [dev] [3.11.4] Initialized new cluster connection between /192.168.200.121:60790 and /192.168.200.6:5707
-2019-06-28 10:08:36 [hz._hzInstance_1_dev.IO.thread-in-1] INFO  c.hazelcast.nio.tcp.TcpIpConnection - [192.168.200.121]:5701 [dev] [3.11.4] Initialized new cluster connection between /192.168.200.121:60784 and /192.168.200.6:5708
-2019-06-28 10:08:36 [hz._hzInstance_1_dev.IO.thread-in-2] INFO  c.hazelcast.nio.tcp.TcpIpConnection - [192.168.200.121]:5701 [dev] [3.11.4] Initialized new cluster connection between /192.168.200.121:60792 and /192.168.200.6:5704
-2019-06-28 10:08:40 [hz._hzInstance_1_dev.cached.thread-6] WARN  c.h.i.c.impl.ClusterHeartbeatManager - [192.168.200.121]:5701 [dev] [3.11.4] This node does not have a connection to Member [192.168.200.6]:5706 - ba52c03d-929e-4e5a-85d1-1c7f14400c76
-2019-06-28 10:08:40 [hz._hzInstance_1_dev.cached.thread-4] INFO  com.hazelcast.nio.tcp.TcpIpConnector - [192.168.200.121]:5701 [dev] [3.11.4] Connecting to /192.168.200.6:5706, timeout: 0, bind-any: true
-2019-06-28 10:08:40 [hz._hzInstance_1_dev.cached.thread-6] WARN  c.h.i.c.impl.ClusterHeartbeatManager - [192.168.200.121]:5701 [dev] [3.11.4] Suspecting Member [192.168.200.6]:5708 - 132be8af-a0ab-4168-b963-ba83861055fe because it has not sent any heartbeats since 2019-06-28 10:07:27.358. Now: 2019-06-28 10:08:28.970, heartbeat timeout: 60000 ms, suspicion level: 1.00
-2019-06-28 10:08:40 [hz._hzInstance_1_dev.cached.thread-6] WARN  c.h.i.cluster.impl.MembershipManager - [192.168.200.121]:5701 [dev] [3.11.4] Member [192.168.200.6]:5708 - 132be8af-a0ab-4168-b963-ba83861055fe is suspected to be dead for reason: Suspecting Member [192.168.200.6]:5708 - 132be8af-a0ab-4168-b963-ba83861055fe because it has not sent any heartbeats since 2019-06-28 10:07:27.358. Now: 2019-06-28 10:08:28.970, heartbeat timeout: 60000 ms, suspicion level: 1.00
-2019-06-28 10:08:40 [hz._hzInstance_1_dev.cached.thread-6] INFO  c.hazelcast.nio.tcp.TcpIpConnection - [192.168.200.121]:5701 [dev] [3.11.4] Connection[id=9, /192.168.200.121:60784->/192.168.200.6:5708, endpoint=[192.168.200.6]:5708, alive=false, type=MEMBER] closed. Reason: Suspecting Member [192.168.200.6]:5708 - 132be8af-a0ab-4168-b963-ba83861055fe because it has not sent any heartbeats since 2019-06-28 10:07:27.358. Now: 2019-06-28 10:08:28.970, heartbeat timeout: 60000 ms, suspicion level: 1.00
-2019-06-28 10:08:42 [hz._hzInstance_1_dev.IO.thread-in-0] INFO  c.hazelcast.nio.tcp.TcpIpConnection - [192.168.200.121]:5701 [dev] [3.11.4] Connection[id=12, /192.168.200.121:60790->/192.168.200.6:5707, endpoint=[192.168.200.6]:5707, alive=false, type=MEMBER] closed. Reason: Connection closed by the other side
-2019-06-28 10:08:42 [hz._hzInstance_1_dev.IO.thread-in-1] INFO  c.hazelcast.nio.tcp.TcpIpConnection - [192.168.200.121]:5701 [dev] [3.11.4] Connection[id=13, /192.168.200.121:60791->/192.168.200.6:5703, endpoint=[192.168.200.6]:5703, alive=false, type=MEMBER] closed. Reason: Connection closed by the other side
-2019-06-28 10:08:42 [hz._hzInstance_1_dev.IO.thread-in-2] INFO  c.hazelcast.nio.tcp.TcpIpConnection - [192.168.200.121]:5701 [dev] [3.11.4] Connection[id=11, /192.168.200.121:60789->/192.168.200.6:5705, endpoint=[192.168.200.6]:5705, alive=false, type=MEMBER] closed. Reason: Connection closed by the other side
-2019-06-28 10:08:42 [hz._hzInstance_1_dev.cached.thread-6] INFO  com.hazelcast.nio.tcp.TcpIpConnector - [192.168.200.121]:5701 [dev] [3.11.4] Connecting to /192.168.200.6:5705, timeout: 0, bind-any: true
-2019-06-28 10:08:42 [hz._hzInstance_1_dev.cached.thread-5] INFO  com.hazelcast.nio.tcp.TcpIpConnector - [192.168.200.121]:5701 [dev] [3.11.4] Connecting to /192.168.200.6:5703, timeout: 0, bind-any: true
-2019-06-28 10:08:42 [hz._hzInstance_1_dev.IO.thread-in-2] INFO  c.hazelcast.nio.tcp.TcpIpConnection - [192.168.200.121]:5701 [dev] [3.11.4] Connection[id=14, /192.168.200.121:60792->/192.168.200.6:5704, endpoint=[192.168.200.6]:5704, alive=false, type=MEMBER] closed. Reason: Connection closed by the other side
-2019-06-28 10:08:42 [hz._hzInstance_1_dev.cached.thread-4] INFO  com.hazelcast.nio.tcp.TcpIpConnector - [192.168.200.121]:5701 [dev] [3.11.4] Connecting to /192.168.200.6:5707, timeout: 0, bind-any: true
-2019-06-28 10:08:42 [hz._hzInstance_1_dev.cached.thread-1] INFO  com.hazelcast.nio.tcp.TcpIpConnector - [192.168.200.121]:5701 [dev] [3.11.4] Connecting to /192.168.200.6:5704, timeout: 0, bind-any: true
-2019-06-28 10:08:42 [hz._hzInstance_1_dev.IO.thread-in-0] INFO  c.hazelcast.nio.tcp.TcpIpConnection - [192.168.200.121]:5701 [dev] [3.11.4] Initialized new cluster connection between /192.168.200.121:60808 and /192.168.200.6:5706
-2019-06-28 10:08:45 [hz._hzInstance_1_dev.cached.thread-12] INFO  com.hazelcast.nio.tcp.TcpIpConnector - [192.168.200.121]:5701 [dev] [3.11.4] Connecting to /192.168.200.6:5708, timeout: 0, bind-any: true
-2019-06-28 10:08:45 [hz._hzInstance_1_dev.cached.thread-9] WARN  c.h.i.c.impl.ClusterHeartbeatManager - [192.168.200.121]:5701 [dev] [3.11.4] This node does not have a connection to Member [192.168.200.6]:5708 - 132be8af-a0ab-4168-b963-ba83861055fe
-2019-06-28 10:08:48 [hz._hzInstance_1_dev.IO.thread-in-2] INFO  c.hazelcast.nio.tcp.TcpIpConnection - [192.168.200.121]:5701 [dev] [3.11.4] Initialized new cluster connection between /192.168.200.121:60811 and /192.168.200.6:5703
-2019-06-28 10:08:48 [hz._hzInstance_1_dev.IO.thread-in-1] INFO  c.hazelcast.nio.tcp.TcpIpConnection - [192.168.200.121]:5701 [dev] [3.11.4] Initialized new cluster connection between /192.168.200.121:60809 and /192.168.200.6:5707
-2019-06-28 10:08:48 [hz._hzInstance_1_dev.IO.thread-in-0] INFO  c.hazelcast.nio.tcp.TcpIpConnection - [192.168.200.121]:5701 [dev] [3.11.4] Initialized new cluster connection between /192.168.200.121:60810 and /192.168.200.6:5705
-2019-06-28 10:08:49 [hz._hzInstance_1_dev.IO.thread-in-1] INFO  c.hazelcast.nio.tcp.TcpIpConnection - [192.168.200.121]:5701 [dev] [3.11.4] Initialized new cluster connection between /192.168.200.121:60812 and /192.168.200.6:5704
-2019-06-28 10:08:50 [hz._hzInstance_1_dev.IO.thread-in-2] INFO  c.hazelcast.nio.tcp.TcpIpConnection - [192.168.200.121]:5701 [dev] [3.11.4] Initialized new cluster connection between /192.168.200.121:60813 and /192.168.200.6:5708
-2019-06-28 10:08:50 [hz._hzInstance_1_dev.cached.thread-12] WARN  c.h.i.c.impl.ClusterHeartbeatManager - [192.168.200.121]:5701 [dev] [3.11.4] This node does not have a connection to Member [192.168.200.6]:5708 - 132be8af-a0ab-4168-b963-ba83861055fe
-2019-06-28 10:08:53 [hz._hzInstance_1_dev.generic-operation.thread-0] INFO  c.h.i.c.i.o.ExplicitSuspicionOp - [192.168.200.121]:5701 [dev] [3.11.4] Received suspicion request from: [192.168.200.6]:5705
-2019-06-28 10:08:53 [hz._hzInstance_1_dev.generic-operation.thread-2] INFO  c.h.i.c.i.o.ExplicitSuspicionOp - [192.168.200.121]:5701 [dev] [3.11.4] Received suspicion request from: [192.168.200.6]:5703
-2019-06-28 10:08:53 [hz._hzInstance_1_dev.priority-generic-operation.thread-0] INFO  c.h.i.c.i.o.ExplicitSuspicionOp - [192.168.200.121]:5701 [dev] [3.11.4] Received suspicion request from: [192.168.200.6]:5704
-2019-06-28 10:08:53 [hz._hzInstance_1_dev.generic-operation.thread-1] INFO  c.h.i.c.i.o.ExplicitSuspicionOp - [192.168.200.121]:5701 [dev] [3.11.4] Received suspicion request from: [192.168.200.6]:5707
-2019-06-28 10:08:53 [hz._hzInstance_1_dev.generic-operation.thread-0] WARN  c.h.i.cluster.impl.MembershipManager - [192.168.200.121]:5701 [dev] [3.11.4] Member [192.168.200.6]:5705 - b3cf4c5c-050f-4a91-af0d-9cb642037335 is suspected to be dead for reason: explicit suspicion
-2019-06-28 10:08:53 [hz._hzInstance_1_dev.generic-operation.thread-0] INFO  c.hazelcast.nio.tcp.TcpIpConnection - [192.168.200.121]:5701 [dev] [3.11.4] Connection[id=18, /192.168.200.121:60810->/192.168.200.6:5705, endpoint=[192.168.200.6]:5705, alive=false, type=MEMBER] closed. Reason: explicit suspicion
-2019-06-28 10:08:53 [hz._hzInstance_1_dev.generic-operation.thread-2] WARN  c.h.i.cluster.impl.MembershipManager - [192.168.200.121]:5701 [dev] [3.11.4] Member [192.168.200.6]:5703 - c079adab-dcd5-46a0-b619-8ea7c061a57f is suspected to be dead for reason: explicit suspicion
-2019-06-28 10:08:53 [hz._hzInstance_1_dev.generic-operation.thread-2] INFO  c.hazelcast.nio.tcp.TcpIpConnection - [192.168.200.121]:5701 [dev] [3.11.4] Connection[id=16, /192.168.200.121:60811->/192.168.200.6:5703, endpoint=[192.168.200.6]:5703, alive=false, type=MEMBER] closed. Reason: explicit suspicion
-2019-06-28 10:08:53 [hz._hzInstance_1_dev.priority-generic-operation.thread-0] WARN  c.h.i.cluster.impl.MembershipManager - [192.168.200.121]:5701 [dev] [3.11.4] Member [192.168.200.6]:5704 - f7b9f922-25c3-453c-992a-938f37953f8c is suspected to be dead for reason: explicit suspicion
-2019-06-28 10:08:53 [hz._hzInstance_1_dev.priority-generic-operation.thread-0] INFO  c.hazelcast.nio.tcp.TcpIpConnection - [192.168.200.121]:5701 [dev] [3.11.4] Connection[id=19, /192.168.200.121:60812->/192.168.200.6:5704, endpoint=[192.168.200.6]:5704, alive=false, type=MEMBER] closed. Reason: explicit suspicion
-2019-06-28 10:08:53 [hz._hzInstance_1_dev.generic-operation.thread-1] WARN  c.h.i.cluster.impl.MembershipManager - [192.168.200.121]:5701 [dev] [3.11.4] Member [192.168.200.6]:5707 - 86a1aa42-9321-4b30-8204-3687f4a6adff is suspected to be dead for reason: explicit suspicion
-2019-06-28 10:08:53 [hz._hzInstance_1_dev.generic-operation.thread-1] INFO  c.hazelcast.nio.tcp.TcpIpConnection - [192.168.200.121]:5701 [dev] [3.11.4] Connection[id=17, /192.168.200.121:60809->/192.168.200.6:5707, endpoint=[192.168.200.6]:5707, alive=false, type=MEMBER] closed. Reason: explicit suspicion
-2019-06-28 10:08:53 [hz._hzInstance_1_dev.generic-operation.thread-1] INFO  c.h.i.cluster.impl.MembershipManager - [192.168.200.121]:5701 [dev] [3.11.4] Starting mastership claim process...
-2019-06-28 10:08:53 [hz._hzInstance_1_dev.generic-operation.thread-1] INFO  c.h.i.cluster.impl.MembershipManager - [192.168.200.121]:5701 [dev] [3.11.4] Local MembersView{version=196, members=[MemberInfo{address=[192.168.200.6]:5701, uuid=53542f5e-f0db-47cc-9bb0-e06f8043f3a2, liteMember=false, memberListJoinVersion=1}, MemberInfo{address=[192.168.200.6]:5703, uuid=c079adab-dcd5-46a0-b619-8ea7c061a57f, liteMember=false, memberListJoinVersion=46}, MemberInfo{address=[192.168.200.6]:5704, uuid=f7b9f922-25c3-453c-992a-938f37953f8c, liteMember=false, memberListJoinVersion=61}, MemberInfo{address=[192.168.200.6]:5705, uuid=b3cf4c5c-050f-4a91-af0d-9cb642037335, liteMember=false, memberListJoinVersion=153}, MemberInfo{address=[192.168.200.6]:5706, uuid=ba52c03d-929e-4e5a-85d1-1c7f14400c76, liteMember=false, memberListJoinVersion=159}, MemberInfo{address=[192.168.200.6]:5707, uuid=86a1aa42-9321-4b30-8204-3687f4a6adff, liteMember=false, memberListJoinVersion=164}, MemberInfo{address=[192.168.200.6]:5708, uuid=132be8af-a0ab-4168-b963-ba83861055fe, liteMember=false, memberListJoinVersion=189}, MemberInfo{address=[192.168.200.121]:5701, uuid=3ffe0061-c093-43d9-9ec3-a2046228c7f4, liteMember=false, memberListJoinVersion=196}]} with suspected members: [[192.168.200.6]:5708, [192.168.200.6]:5703, [192.168.200.6]:5701, [192.168.200.6]:5706, [192.168.200.6]:5707, [192.168.200.6]:5704, [192.168.200.6]:5705] and initial addresses to ask: []
-2019-06-28 10:08:53 [hz._hzInstance_1_dev.cached.thread-12] INFO  c.hazelcast.nio.tcp.TcpIpConnection - [192.168.200.121]:5701 [dev] [3.11.4] Connection[id=10, /192.168.200.121:60788->/192.168.200.6:5701, endpoint=[192.168.200.6]:5701, alive=false, type=MEMBER] closed. Reason: Member left event received from master
-2019-06-28 10:08:53 [hz._hzInstance_1_dev.cached.thread-12] INFO  c.hazelcast.nio.tcp.TcpIpConnection - [192.168.200.121]:5701 [dev] [3.11.4] Connection[id=15, /192.168.200.121:60808->/192.168.200.6:5706, endpoint=[192.168.200.6]:5706, alive=false, type=MEMBER] closed. Reason: Member left event received from master
-2019-06-28 10:08:53 [hz._hzInstance_1_dev.cached.thread-12] INFO  c.hazelcast.nio.tcp.TcpIpConnection - [192.168.200.121]:5701 [dev] [3.11.4] Connection[id=20, /192.168.200.121:60813->/192.168.200.6:5708, endpoint=[192.168.200.6]:5708, alive=false, type=MEMBER] closed. Reason: Member left event received from master
-2019-06-28 10:08:53 [hz._hzInstance_1_dev.cached.thread-12] INFO  c.h.internal.cluster.ClusterService - [192.168.200.121]:5701 [dev] [3.11.4] 
-
-Members {size:1, ver:197} [
-	Member [192.168.200.121]:5701 - 3ffe0061-c093-43d9-9ec3-a2046228c7f4 this
-]
-
-2019-06-28 10:08:53 [hz._hzInstance_1_dev.cached.thread-12] INFO  c.h.i.cluster.impl.MembershipManager - [192.168.200.121]:5701 [dev] [3.11.4] Mastership is claimed with: MembersView{version=197, members=[MemberInfo{address=[192.168.200.121]:5701, uuid=3ffe0061-c093-43d9-9ec3-a2046228c7f4, liteMember=false, memberListJoinVersion=196}]}
-2019-06-28 10:08:53 [hz._hzInstance_1_dev.cached.thread-1] INFO  c.h.t.TransactionManagerService - [192.168.200.121]:5701 [dev] [3.11.4] Committing/rolling-back live transactions of [192.168.200.6]:5701, UUID: 53542f5e-f0db-47cc-9bb0-e06f8043f3a2
-2019-06-28 10:08:53 [hz._hzInstance_1_dev.cached.thread-1] INFO  c.h.t.TransactionManagerService - [192.168.200.121]:5701 [dev] [3.11.4] Committing/rolling-back live transactions of [192.168.200.6]:5703, UUID: c079adab-dcd5-46a0-b619-8ea7c061a57f
-2019-06-28 10:08:53 [hz._hzInstance_1_dev.cached.thread-1] INFO  c.h.t.TransactionManagerService - [192.168.200.121]:5701 [dev] [3.11.4] Committing/rolling-back live transactions of [192.168.200.6]:5704, UUID: f7b9f922-25c3-453c-992a-938f37953f8c
-2019-06-28 10:08:53 [hz._hzInstance_1_dev.cached.thread-1] INFO  c.h.t.TransactionManagerService - [192.168.200.121]:5701 [dev] [3.11.4] Committing/rolling-back live transactions of [192.168.200.6]:5705, UUID: b3cf4c5c-050f-4a91-af0d-9cb642037335
-2019-06-28 10:08:53 [hz._hzInstance_1_dev.cached.thread-1] INFO  c.h.t.TransactionManagerService - [192.168.200.121]:5701 [dev] [3.11.4] Committing/rolling-back live transactions of [192.168.200.6]:5706, UUID: ba52c03d-929e-4e5a-85d1-1c7f14400c76
-2019-06-28 10:08:53 [hz._hzInstance_1_dev.cached.thread-1] INFO  c.h.t.TransactionManagerService - [192.168.200.121]:5701 [dev] [3.11.4] Committing/rolling-back live transactions of [192.168.200.6]:5707, UUID: 86a1aa42-9321-4b30-8204-3687f4a6adff
-2019-06-28 10:08:53 [hz._hzInstance_1_dev.cached.thread-1] INFO  c.h.t.TransactionManagerService - [192.168.200.121]:5701 [dev] [3.11.4] Committing/rolling-back live transactions of [192.168.200.6]:5708, UUID: 132be8af-a0ab-4168-b963-ba83861055fe
-2019-06-28 10:08:53 [hz._hzInstance_1_dev.migration] INFO  c.h.i.p.InternalPartitionService - [192.168.200.121]:5701 [dev] [3.11.4] Fetching most recent partition table! my version: 119801
-2019-06-28 10:08:53 [hz._hzInstance_1_dev.migration] INFO  c.h.i.p.InternalPartitionService - [192.168.200.121]:5701 [dev] [3.11.4] Most recent partition table version: 119801
-2019-06-28 10:08:53 [hz._hzInstance_1_dev.migration] WARN  c.h.i.p.impl.MigrationManager - [192.168.200.121]:5701 [dev] [3.11.4] partitionId=79 is completely lost!
-2019-06-28 10:08:53 [hz._hzInstance_1_dev.migration] WARN  c.h.i.p.impl.MigrationManager - [192.168.200.121]:5701 [dev] [3.11.4] partitionId=83 is completely lost!
-2019-06-28 10:08:53 [hz._hzInstance_1_dev.migration] WARN  c.h.i.p.impl.MigrationManager - [192.168.200.121]:5701 [dev] [3.11.4] partitionId=95 is completely lost!
-2019-06-28 10:08:53 [hz._hzInstance_1_dev.migration] WARN  c.h.i.p.impl.MigrationManager - [192.168.200.121]:5701 [dev] [3.11.4] partitionId=99 is completely lost!
-2019-06-28 10:08:53 [hz._hzInstance_1_dev.migration] WARN  c.h.i.p.impl.MigrationManager - [192.168.200.121]:5701 [dev] [3.11.4] partitionId=105 is completely lost!
-2019-06-28 10:08:53 [hz._hzInstance_1_dev.migration] WARN  c.h.i.p.impl.MigrationManager - [192.168.200.121]:5701 [dev] [3.11.4] partitionId=108 is completely lost!
-2019-06-28 10:08:53 [hz._hzInstance_1_dev.migration] WARN  c.h.i.p.impl.MigrationManager - [192.168.200.121]:5701 [dev] [3.11.4] partitionId=110 is completely lost!
-2019-06-28 10:08:53 [hz._hzInstance_1_dev.migration] WARN  c.h.i.p.impl.MigrationManager - [192.168.200.121]:5701 [dev] [3.11.4] partitionId=112 is completely lost!
-2019-06-28 10:08:53 [hz._hzInstance_1_dev.migration] WARN  c.h.i.p.impl.MigrationManager - [192.168.200.121]:5701 [dev] [3.11.4] partitionId=123 is completely lost!
-2019-06-28 10:08:53 [hz._hzInstance_1_dev.migration] WARN  c.h.i.p.impl.MigrationManager - [192.168.200.121]:5701 [dev] [3.11.4] partitionId=129 is completely lost!
-2019-06-28 10:08:53 [hz._hzInstance_1_dev.migration] WARN  c.h.i.p.impl.MigrationManager - [192.168.200.121]:5701 [dev] [3.11.4] partitionId=131 is completely lost!
-2019-06-28 10:08:53 [hz._hzInstance_1_dev.migration] WARN  c.h.i.p.impl.MigrationManager - [192.168.200.121]:5701 [dev] [3.11.4] partitionId=134 is completely lost!
-2019-06-28 10:08:53 [hz._hzInstance_1_dev.migration] WARN  c.h.i.p.impl.MigrationManager - [192.168.200.121]:5701 [dev] [3.11.4] partitionId=135 is completely lost!
-2019-06-28 10:08:53 [hz._hzInstance_1_dev.migration] WARN  c.h.i.p.impl.MigrationManager - [192.168.200.121]:5701 [dev] [3.11.4] partitionId=143 is completely lost!
-2019-06-28 10:08:53 [hz._hzInstance_1_dev.migration] WARN  c.h.i.p.impl.MigrationManager - [192.168.200.121]:5701 [dev] [3.11.4] partitionId=145 is completely lost!
-2019-06-28 10:08:53 [hz._hzInstance_1_dev.migration] WARN  c.h.i.p.impl.MigrationManager - [192.168.200.121]:5701 [dev] [3.11.4] partitionId=146 is completely lost!
-2019-06-28 10:08:53 [hz._hzInstance_1_dev.migration] WARN  c.h.i.p.impl.MigrationManager - [192.168.200.121]:5701 [dev] [3.11.4] partitionId=150 is completely lost!
-2019-06-28 10:08:53 [hz._hzInstance_1_dev.migration] WARN  c.h.i.p.impl.MigrationManager - [192.168.200.121]:5701 [dev] [3.11.4] partitionId=157 is completely lost!
-2019-06-28 10:08:53 [hz._hzInstance_1_dev.migration] WARN  c.h.i.p.impl.MigrationManager - [192.168.200.121]:5701 [dev] [3.11.4] partitionId=160 is completely lost!
-2019-06-28 10:08:53 [hz._hzInstance_1_dev.migration] WARN  c.h.i.p.impl.MigrationManager - [192.168.200.121]:5701 [dev] [3.11.4] partitionId=162 is completely lost!
-2019-06-28 10:08:53 [hz._hzInstance_1_dev.migration] WARN  c.h.i.p.impl.MigrationManager - [192.168.200.121]:5701 [dev] [3.11.4] partitionId=167 is completely lost!
-2019-06-28 10:08:53 [hz._hzInstance_1_dev.migration] WARN  c.h.i.p.impl.MigrationManager - [192.168.200.121]:5701 [dev] [3.11.4] partitionId=176 is completely lost!
-2019-06-28 10:08:53 [hz._hzInstance_1_dev.migration] WARN  c.h.i.p.impl.MigrationManager - [192.168.200.121]:5701 [dev] [3.11.4] partitionId=181 is completely lost!
-2019-06-28 10:08:53 [hz._hzInstance_1_dev.migration] WARN  c.h.i.p.impl.MigrationManager - [192.168.200.121]:5701 [dev] [3.11.4] partitionId=185 is completely lost!
-2019-06-28 10:08:53 [hz._hzInstance_1_dev.migration] WARN  c.h.i.p.impl.MigrationManager - [192.168.200.121]:5701 [dev] [3.11.4] partitionId=186 is completely lost!
-2019-06-28 10:08:53 [hz._hzInstance_1_dev.migration] WARN  c.h.i.p.impl.MigrationManager - [192.168.200.121]:5701 [dev] [3.11.4] partitionId=190 is completely lost!
-2019-06-28 10:08:53 [hz._hzInstance_1_dev.migration] WARN  c.h.i.p.impl.MigrationManager - [192.168.200.121]:5701 [dev] [3.11.4] partitionId=195 is completely lost!
-2019-06-28 10:08:53 [hz._hzInstance_1_dev.migration] WARN  c.h.i.p.impl.MigrationManager - [192.168.200.121]:5701 [dev] [3.11.4] partitionId=212 is completely lost!
-2019-06-28 10:08:53 [hz._hzInstance_1_dev.migration] WARN  c.h.i.p.impl.MigrationManager - [192.168.200.121]:5701 [dev] [3.11.4] partitionId=218 is completely lost!
-2019-06-28 10:08:53 [hz._hzInstance_1_dev.migration] WARN  c.h.i.p.impl.MigrationManager - [192.168.200.121]:5701 [dev] [3.11.4] partitionId=220 is completely lost!
-2019-06-28 10:08:53 [hz._hzInstance_1_dev.migration] WARN  c.h.i.p.impl.MigrationManager - [192.168.200.121]:5701 [dev] [3.11.4] partitionId=224 is completely lost!
-2019-06-28 10:08:53 [hz._hzInstance_1_dev.migration] WARN  c.h.i.p.impl.MigrationManager - [192.168.200.121]:5701 [dev] [3.11.4] partitionId=231 is completely lost!
-2019-06-28 10:08:53 [hz._hzInstance_1_dev.migration] WARN  c.h.i.p.impl.MigrationManager - [192.168.200.121]:5701 [dev] [3.11.4] partitionId=232 is completely lost!
-2019-06-28 10:08:53 [hz._hzInstance_1_dev.migration] WARN  c.h.i.p.impl.MigrationManager - [192.168.200.121]:5701 [dev] [3.11.4] partitionId=244 is completely lost!
-2019-06-28 10:08:53 [hz._hzInstance_1_dev.migration] WARN  c.h.i.p.impl.MigrationManager - [192.168.200.121]:5701 [dev] [3.11.4] partitionId=246 is completely lost!
-2019-06-28 10:08:53 [hz._hzInstance_1_dev.migration] WARN  c.h.i.p.impl.MigrationManager - [192.168.200.121]:5701 [dev] [3.11.4] partitionId=267 is completely lost!
-2019-06-28 10:08:53 [hz._hzInstance_1_dev.migration] WARN  c.h.i.p.impl.MigrationManager - [192.168.200.121]:5701 [dev] [3.11.4] Assigning new owners for 36 LOST partitions!
-2019-06-28 10:08:53 [hz._hzInstance_1_dev.migration] INFO  c.h.i.p.impl.MigrationManager - [192.168.200.121]:5701 [dev] [3.11.4] Partition balance is ok, no need to re-partition cluster data... 
-2019-06-28 10:11:07 [restartedMain] INFO  a.c.x.XmiesFirmaApplication - Starting XmiesFirmaApplication on DESKTOP-01C68AV with PID 2672 (C:\Users\aqilp\IdeaProjects\az.contasoft\xmies\xmies_firma\target\classes started by aqilp in C:\Users\aqilp\IdeaProjects\az.contasoft\xmies\xmies_firma)
-2019-06-28 10:11:07 [restartedMain] INFO  a.c.x.XmiesFirmaApplication - No active profile set, falling back to default profiles: default
-2019-06-28 10:11:07 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2019-06-28 10:11:07 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2019-06-28 10:11:09 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data repositories in DEFAULT mode.
-2019-06-28 10:11:09 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 64ms. Found 1 repository interfaces.
-2019-06-28 10:11:09 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$c38b4805] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2019-06-28 10:11:09 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 12012 (http)
-2019-06-28 10:11:09 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
-2019-06-28 10:11:09 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.21]
-2019-06-28 10:11:10 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
-2019-06-28 10:11:10 [restartedMain] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 2273 ms
-2019-06-28 10:11:10 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
-2019-06-28 10:11:10 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
-2019-06-28 10:11:10 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [
-	name: default
-	...]
-2019-06-28 10:11:10 [restartedMain] INFO  org.hibernate.Version - HHH000412: Hibernate Core {5.3.10.Final}
-2019-06-28 10:11:10 [restartedMain] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
-2019-06-28 10:11:11 [restartedMain] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
-2019-06-28 10:11:11 [restartedMain] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
-2019-06-28 10:11:11 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
-2019-06-28 10:11:11 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
-2019-06-28 10:11:11 [restartedMain] INFO  com.hazelcast.instance.AddressPicker - [LOCAL] [dev] [3.11.4] Prefer IPv4 stack is true, prefer IPv6 addresses is false
-2019-06-28 10:11:12 [restartedMain] INFO  com.hazelcast.instance.AddressPicker - [LOCAL] [dev] [3.11.4] Picked [192.168.200.121]:5701, using socket ServerSocket[addr=/0:0:0:0:0:0:0:0,localport=5701], bind any local is true
-2019-06-28 10:11:12 [restartedMain] INFO  com.hazelcast.system - [192.168.200.121]:5701 [dev] [3.11.4] Hazelcast 3.11.4 (20190509 - d5ad9d4) starting at [192.168.200.121]:5701
-2019-06-28 10:11:12 [restartedMain] INFO  com.hazelcast.system - [192.168.200.121]:5701 [dev] [3.11.4] Copyright (c) 2008-2019, Hazelcast, Inc. All Rights Reserved.
-2019-06-28 10:11:12 [restartedMain] INFO  com.hazelcast.instance.Node - [192.168.200.121]:5701 [dev] [3.11.4] A non-empty group password is configured for the Hazelcast member. Starting with Hazelcast version 3.8.2, members with the same group name, but with different group passwords (that do not use authentication) form a cluster. The group password configuration will be removed completely in a future release.
-2019-06-28 10:11:12 [restartedMain] INFO  c.h.s.i.o.impl.BackpressureRegulator - [192.168.200.121]:5701 [dev] [3.11.4] Backpressure is disabled
-2019-06-28 10:11:13 [restartedMain] INFO  com.hazelcast.instance.Node - [192.168.200.121]:5701 [dev] [3.11.4] Creating MulticastJoiner
-2019-06-28 10:11:13 [restartedMain] INFO  c.h.s.i.o.impl.OperationExecutorImpl - [192.168.200.121]:5701 [dev] [3.11.4] Starting 8 partition threads and 5 generic threads (1 dedicated for priority tasks)
-2019-06-28 10:11:13 [restartedMain] INFO  c.h.internal.diagnostics.Diagnostics - [192.168.200.121]:5701 [dev] [3.11.4] Diagnostics disabled. To enable add -Dhazelcast.diagnostics.enabled=true to the JVM arguments.
-2019-06-28 10:11:13 [restartedMain] INFO  com.hazelcast.core.LifecycleService - [192.168.200.121]:5701 [dev] [3.11.4] [192.168.200.121]:5701 is STARTING
-2019-06-28 10:11:15 [restartedMain] INFO  c.h.internal.cluster.ClusterService - [192.168.200.121]:5701 [dev] [3.11.4] 
-
-Members {size:1, ver:1} [
-	Member [192.168.200.121]:5701 - ffc5b71d-dc18-44df-8375-9f99c742b768 this
-]
-
-2019-06-28 10:11:15 [restartedMain] INFO  com.hazelcast.core.LifecycleService - [192.168.200.121]:5701 [dev] [3.11.4] [192.168.200.121]:5701 is STARTED
-2019-06-28 10:11:15 [restartedMain] INFO  c.h.i.p.impl.PartitionStateManager - [192.168.200.121]:5701 [dev] [3.11.4] Initializing cluster partition table arrangement...
-2019-06-28 10:11:15 [restartedMain] INFO  a.c.x.util.HazelcastUtility - Starting to cache firms
-2019-06-28 10:11:15 [restartedMain] INFO  o.h.h.i.QueryTranslatorFactoryInitiator - HHH000397: Using ASTQueryTranslatorFactory
-2019-06-28 10:11:15 [restartedMain] INFO  a.c.x.util.HazelcastUtility - firma : Firma{idFirma=6, adi='Zeytun', address='Moskva', telefon='0519999900', isActive=1}
-2019-06-28 10:11:15 [restartedMain] INFO  a.c.x.util.HazelcastUtility - firma : Firma{idFirma=5, adi='Zeferan', address='Baki', telefon='0554444444', isActive=1}
-2019-06-28 10:11:15 [restartedMain] INFO  a.c.x.util.HazelcastUtility - firma : Firma{idFirma=4, adi='avromed', address='SUMQAYIT', telefon='0505005050', isActive=1}
-2019-06-28 10:11:15 [restartedMain] INFO  a.c.x.util.HazelcastUtility - firma : Firma{idFirma=3, adi='Zeytun', address='xirdalan', telefon='0515464611', isActive=1}
-2019-06-28 10:11:15 [restartedMain] INFO  a.c.x.util.HazelcastUtility - firma : Firma{idFirma=2, adi='zeytun', address='banqladesh', telefon='021051305', isActive=1}
-2019-06-28 10:11:15 [restartedMain] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
-2019-06-28 10:11:15 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration$JpaWebMvcConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2019-06-28 10:11:15 [restartedMain] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 2 endpoint(s) beneath base path '/actuator'
-2019-06-28 10:11:15 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 12012 (http) with context path ''
-2019-06-28 10:11:15 [restartedMain] INFO  a.c.x.XmiesFirmaApplication - Started XmiesFirmaApplication in 8.505 seconds (JVM running for 9.28)
-2019-06-28 10:11:16 [RMI TCP Connection(3)-192.168.200.121] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
-2019-06-28 10:11:16 [RMI TCP Connection(3)-192.168.200.121] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
-2019-06-28 10:11:16 [RMI TCP Connection(3)-192.168.200.121] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 10 ms
+2019-09-30 11:58:21 - [restartedMain] ERROR o.s.boot.SpringApplication reportFailure 821 - Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Invocation of init method failed; nested exception is org.hibernate.service.spi.ServiceException: Unable to create requested service [org.hibernate.engine.jdbc.env.spi.JdbcEnvironment]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1778) ~[spring-beans-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:593) ~[spring-beans-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:515) ~[spring-beans-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:320) ~[spring-beans-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222) ~[spring-beans-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:318) ~[spring-beans-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199) ~[spring-beans-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1105) ~[spring-context-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:867) ~[spring-context-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:549) ~[spring-context-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:140) ~[spring-boot-2.1.6.RELEASE.jar:2.1.6.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:742) [spring-boot-2.1.6.RELEASE.jar:2.1.6.RELEASE]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:389) [spring-boot-2.1.6.RELEASE.jar:2.1.6.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:311) [spring-boot-2.1.6.RELEASE.jar:2.1.6.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1213) [spring-boot-2.1.6.RELEASE.jar:2.1.6.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1202) [spring-boot-2.1.6.RELEASE.jar:2.1.6.RELEASE]
+	at az.contasoft.xmies_firma.XmiesFirmaApplication.main(XmiesFirmaApplication.java:14) [classes/:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_201]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_201]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_201]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_201]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49) [spring-boot-devtools-2.1.6.RELEASE.jar:2.1.6.RELEASE]
+Caused by: org.hibernate.service.spi.ServiceException: Unable to create requested service [org.hibernate.engine.jdbc.env.spi.JdbcEnvironment]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.createService(AbstractServiceRegistryImpl.java:275) ~[hibernate-core-5.3.10.Final.jar:5.3.10.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:237) ~[hibernate-core-5.3.10.Final.jar:5.3.10.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:214) ~[hibernate-core-5.3.10.Final.jar:5.3.10.Final]
+	at org.hibernate.id.factory.internal.DefaultIdentifierGeneratorFactory.injectServices(DefaultIdentifierGeneratorFactory.java:152) ~[hibernate-core-5.3.10.Final.jar:5.3.10.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.injectDependencies(AbstractServiceRegistryImpl.java:286) ~[hibernate-core-5.3.10.Final.jar:5.3.10.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:243) ~[hibernate-core-5.3.10.Final.jar:5.3.10.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:214) ~[hibernate-core-5.3.10.Final.jar:5.3.10.Final]
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.<init>(InFlightMetadataCollectorImpl.java:179) ~[hibernate-core-5.3.10.Final.jar:5.3.10.Final]
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:119) ~[hibernate-core-5.3.10.Final.jar:5.3.10.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.metadata(EntityManagerFactoryBuilderImpl.java:904) ~[hibernate-core-5.3.10.Final.jar:5.3.10.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:935) ~[hibernate-core-5.3.10.Final.jar:5.3.10.Final]
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:57) ~[spring-orm-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:365) ~[spring-orm-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:390) ~[spring-orm-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:377) ~[spring-orm-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:341) ~[spring-orm-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1837) ~[spring-beans-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1774) ~[spring-beans-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	... 21 common frames omitted
+Caused by: org.hibernate.HibernateException: Access to DialectResolutionInfo cannot be null when 'hibernate.dialect' not set
+	at org.hibernate.engine.jdbc.dialect.internal.DialectFactoryImpl.determineDialect(DialectFactoryImpl.java:100) ~[hibernate-core-5.3.10.Final.jar:5.3.10.Final]
+	at org.hibernate.engine.jdbc.dialect.internal.DialectFactoryImpl.buildDialect(DialectFactoryImpl.java:54) ~[hibernate-core-5.3.10.Final.jar:5.3.10.Final]
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:137) ~[hibernate-core-5.3.10.Final.jar:5.3.10.Final]
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:35) ~[hibernate-core-5.3.10.Final.jar:5.3.10.Final]
+	at org.hibernate.boot.registry.internal.StandardServiceRegistryImpl.initiateService(StandardServiceRegistryImpl.java:94) ~[hibernate-core-5.3.10.Final.jar:5.3.10.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.createService(AbstractServiceRegistryImpl.java:263) ~[hibernate-core-5.3.10.Final.jar:5.3.10.Final]
+	... 38 common frames omitted

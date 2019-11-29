@@ -97,12 +97,6 @@ public class HazelcastUtility {
         }
     }
 
-    @PostConstruct
-    public void init() {
-        logger.info("\n→→→HAZEL: trying to init PostConstruct\n\n");
-        mapOfFirma.clear();
-        mapOfFirma.destroy();
-        startCaching();
-    }
+
 }
 
