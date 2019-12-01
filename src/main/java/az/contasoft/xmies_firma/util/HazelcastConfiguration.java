@@ -2,6 +2,7 @@ package az.contasoft.xmies_firma.util;
 
 import az.contasoft.xmies_firma.db.entity.Firma;
 import com.hazelcast.config.Config;
+import com.hazelcast.config.NetworkConfig;
 import com.hazelcast.core.Hazelcast;
 import com.hazelcast.core.HazelcastInstance;
 import com.hazelcast.core.IMap;
@@ -20,7 +21,14 @@ public class HazelcastConfiguration {
 
     @Bean
     public Config config(){
-        return new Config();
+        Config config = new Config();
+        NetworkConfig network = config.getNetworkConfig();
+        network.getJoin().getMulticastConfig().setEnabled(false);
+        network.getJoin().getTcpIpConfig().setEnabled(true);
+        network.setPortAutoIncrement(true);
+        network.setPort(33001);
+        network.getJoin().getTcpIpConfig().addMember("127.0.0.1");
+        return config;
     }
 
     @Bean
