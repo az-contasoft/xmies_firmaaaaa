@@ -15,6 +15,7 @@ public class HazelcastConfiguration {
     final
     HazelcastMapConfigurations hazelcastMapConfigurations;
 
+
     public HazelcastConfiguration(HazelcastMapConfigurations hazelcastMapConfigurations) {
         this.hazelcastMapConfigurations = hazelcastMapConfigurations;
     }
