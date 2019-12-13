@@ -23,6 +23,7 @@ public class Firma implements Serializable {
         return idFirma;
     }
 
+
     public void setIdFirma(long idFirma) {
         this.idFirma = idFirma;
     }
