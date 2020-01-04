@@ -22,7 +22,6 @@ public class SearchControllerRedis {
         this.searchServiceRedis = searchServiceRedis;
     }
 
-
     @GetMapping("/map")
     public ResponseEntity<Map<Long, Firma>> getAll(){
         logger.info("{}","getting all from redis");

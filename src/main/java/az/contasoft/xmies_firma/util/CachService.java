@@ -24,6 +24,13 @@ public class CachService {
     DatabaseService databaseService;
 
 
+    public Firma saveOrUpdate(Firma firma) throws Exception{
+        logger.info("{}", "trying to save or update firma, firma info :" + firma.toString());
+        firma = databaseService.insertOrUpdate(firma);
+        redisService.add(firma.getIdFirma(), firma, RedisMapKey.MAP_OF_FIRMA);
+        return firma;
+    }
+
     private Map<Long, Firma> createFirmaFromDB(){
         List<Firma> list = databaseService.getAll();
         logger.info("creating map from db started.");
