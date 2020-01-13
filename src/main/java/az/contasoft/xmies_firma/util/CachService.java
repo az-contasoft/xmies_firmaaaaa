@@ -24,11 +24,21 @@ public class CachService {
     DatabaseService databaseService;
 
 
-    public Firma saveOrUpdate(Firma firma) throws Exception{
-        logger.info("{}", "trying to save or update firma, firma info :" + firma.toString());
-        firma = databaseService.insertOrUpdate(firma);
-        redisService.add(firma.getIdFirma(), firma, RedisMapKey.MAP_OF_FIRMA);
-        return firma;
+    public Firma saveOrUpdateOrDelete(Firma firma) throws Exception{
+        try {
+            firma = databaseService.saveOrUpdateOrDelete(firma);
+            if (firma.getIsActive() == 0) {
+                logger.info("\n→→→REDIS: Trying to remove firma from REDIS map\n\n");
+                redisService.remove(RedisMapKey.MAP_OF_FIRMA, firma.getIdFirma());
+            } else {
+                logger.info("\n→→→REDIS: trying to put firma to REDIS map\n\n");
+                redisService.add(firma.getIdFirma(), firma, RedisMapKey.MAP_OF_FIRMA);
+            }
+            return firma;
+        }catch (Exception e){
+            logger.error("error e : {}, e : {}", e, e);
+            return null;
+        }
     }
 
     private Map<Long, Firma> createFirmaFromDB(){
@@ -43,63 +53,69 @@ public class CachService {
         return map;
     }
 
-    public void startCacheForRedis(){
-        logger.debug("starting to cache data for redis");
+    public String startCachingFirma() {
         try {
-            Map<Long, Firma> map = createFirmaFromDB();
-            for (Firma firma : map.values()) {
-                logger.debug("adding firma [{}] to redis map ", firma);
-                redisService.add(firma.getIdFirma(), firma, RedisMapKey.MAP_OF_FIRMA);
+            redisService.destroyMap(RedisMapKey.MAP_OF_FIRMA);
+            List<Firma> listOfFirmaFromDB = databaseService.getAll();
+            if (listOfFirmaFromDB == null || listOfFirmaFromDB.isEmpty()) {
+                logger.info("listOfFirmaFromDB null ve ya isEmpty, cache olmayacaq");
+                return "db error";
+            } else {
+                logger.info("listOfFirmaFromDB.size(): {}", listOfFirmaFromDB.size());
+                for (Firma firma: listOfFirmaFromDB) {
+                    redisService.add(firma.getIdFirma(), firma, RedisMapKey.MAP_OF_FIRMA);
+                }
             }
-        }catch (Exception e){
-            logger.error("Error start cache : {}", e, e);
+            int size = redisService.get(RedisMapKey.MAP_OF_FIRMA).size();
+            return "success cache size : " + size;
+        } catch (Exception e) {
+            logger.error("error e: {}, e: {}", e, e);
+            return "error caching";
         }
     }
 
 
 
-    public Map<Long, Firma> getAllFirmaMapRedis(){
-        logger.debug("trying to get all firma map...");
+    public Map<Long, Firma> getMapOfFirma() {
         try {
-            Map<Long, Firma> map = redisService.get(RedisMapKey.MAP_OF_FIRMA);
-            if(map == null || map.isEmpty()){
-                logger.debug("map of firma not found");
-                startCacheForRedis();
-                map = redisService.get(RedisMapKey.MAP_OF_FIRMA);
+            logger.info("trying to get mapOfFirma");
+            Map<Long, Firma> mapOfFirma = redisService.get(RedisMapKey.MAP_OF_FIRMA);
+            if (mapOfFirma == null || mapOfFirma.isEmpty()) {
+                logger.info("mapOfFirma not found from redis trying to cache");
+                String cachingResultFirma = startCachingFirma();
+                logger.info("cachingResultFirma : {}", cachingResultFirma);
             }
-            if(map == null || map.isEmpty()){
-                logger.debug("redis not working getting from database...");
-                List<Firma> list = databaseService.getAll();
-                map = list.stream().collect(Collectors.toMap(Firma::getIdFirma, firma -> firma));
+            if (mapOfFirma == null || mapOfFirma.isEmpty()) {
+                logger.info("redis not working getting from database...");
+                mapOfFirma = databaseService.getAll().stream().collect(Collectors.toMap(Firma::getIdFirma, firma-> firma));
             }
-            return map;
-        }catch (Exception e){
-            logger.error("Error getting firma map : {}", e, e);
+            logger.info("mapOfFirma size : {}", mapOfFirma.size());
+            return mapOfFirma;
+        } catch (Exception e) {
+            logger.error("error e: {}, e: {}", e, e);
             return null;
         }
     }
 
     public Firma getFirmaByIdFirma(long idFirma){
-        logger.debug("trying to get firma from redis.. for idFirma : {}", idFirma);
         try {
-            Map<Long, Firma> map = redisService.get(RedisMapKey.MAP_OF_FIRMA);
-            Firma firma;
-            if(map == null || map.isEmpty()){
-                logger.info("map of firma is null or empty trying to start cache..");
-                startCacheForRedis();
-            }else {
-                firma = map.get(idFirma);
-                if (firma != null){
-                    logger.debug("firma found from redis : {}", firma.toString());
-                    return firma;
-                }else {
-                    logger.debug("firma [not] found from redis... firma id : {}", idFirma);
+            logger.info("trying to get firma from redis");
+            Firma firma= getMapOfFirma().get(idFirma);
+            if (firma == null) {
+                logger.info("firma not found from redis. trying to get from DB");
+                firma = databaseService.getFirma(idFirma);
+                if (firma == null) {
+                    logger.info("firma not found for ID : {}", idFirma);
+                } else {
+                    logger.info("firma found : {}", idFirma);
+                    redisService.add(firma.getIdFirma(), firma, RedisMapKey.MAP_OF_FIRMA);
                 }
             }
-        }catch (Exception e){
-            logger.error("Error getting firma : {}", e, e);
+            return firma;
+        } catch (Exception e) {
+            logger.error("error e: {}, e: {}", e, e);
+            return null;
         }
-        return null;
     }
 
 

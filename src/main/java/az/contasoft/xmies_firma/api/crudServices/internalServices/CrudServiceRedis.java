@@ -32,7 +32,7 @@ public class CrudServiceRedis {
             firma.setAddress(saveFirmaRequest.getAddress());
             firma.setTelefon(saveFirmaRequest.getTelefon());
             firma.setIsActive(1);
-            firma = cachService.saveOrUpdate(firma);
+            firma = cachService.saveOrUpdateOrDelete(firma);
             logger.info("\n→→→CRUD_SERVICE: saved Successfully\n\n");
             return new ResponseEntity<>(firma, HttpStatus.OK);
         } catch (Exception e) {
@@ -45,7 +45,7 @@ public class CrudServiceRedis {
     public ResponseEntity<Firma> updateFirma(UpdateFirmaRequest updateFirmaRequest){
         try {
             //Firma firma = repoFirma.findByIdFirmaAndIsActive(updateFirmaRequest.getIdFirma(),1);
-            Firma firma = cachService.getAllFirmaMapRedis().get(updateFirmaRequest.getIdFirma());
+            Firma firma = cachService.getMapOfFirma().get(updateFirmaRequest.getIdFirma());
             if (firma == null) {
                 logger.info("\n→→→CRUD_SERVICE: Firma not found\n\n");
                 return new ResponseEntity<>(null, HttpStatus.NO_CONTENT);
@@ -54,7 +54,7 @@ public class CrudServiceRedis {
             firma.setAdi(updateFirmaRequest.getAdi());
             firma.setAddress(updateFirmaRequest.getAddress());
             firma.setTelefon(updateFirmaRequest.getTelefon());
-            firma = cachService.saveOrUpdate(firma);
+            firma = cachService.saveOrUpdateOrDelete(firma);
             logger.info("\n→→→CRUD_SERVICE: updated Successfully\n\n");
             return new ResponseEntity<>(firma, HttpStatus.OK);
         } catch (Exception e) {
@@ -64,23 +64,23 @@ public class CrudServiceRedis {
     }
 
 
-//    public ResponseEntity<String> deleteFirma(Long idFirma) {
-//        try {
-//            //Firma firma = repoFirma.findByIdFirmaAndIsActive(idFirma,1);
-//            Firma firma = hazelcastUtility.getMapOfFirma().get(idFirma);
-//            if (firma == null) {
-//                logger.info("\n→→→CRUD_SERVICE: firma not found\n\n");
-//                return new ResponseEntity<>("ALINMADI", HttpStatus.NO_CONTENT);
-//            } else {
-//                logger.info("→→→CRUD_SERVICE: found firma : {}", firma);
-//                firma.setIsActive(0);
-//                hazelcastUtility.deleteFirma(idFirma);
-//                logger.info("\n→→→CRUD_SERVICE: deleted successfully\n\n");
-//                return new ResponseEntity<>("SILINDI", HttpStatus.OK);
-//            }
-//        } catch (Exception e) {
-//            logger.error("\n→→→CRUD_SERVICE: error deleting e: {}, e: {}\n\n", e, e);
-//            return new ResponseEntity<>("XETA", HttpStatus.INTERNAL_SERVER_ERROR);
-//        }
-//    }
+    public ResponseEntity<String> deleteFirma(long idFirma) {
+        try {
+            //Firma firma = repoFirma.findByIdFirmaAndIsActive(idFirma,1);
+            Firma firma = cachService.getMapOfFirma().get(idFirma);
+            if (firma == null) {
+                logger.info("\n→→→CRUD_SERVICE: firma not found\n\n");
+                return new ResponseEntity<>("ALINMADI", HttpStatus.NO_CONTENT);
+            } else {
+                logger.info("→→→CRUD_SERVICE: found firma : {}", firma);
+                firma.setIsActive(0);
+                cachService.saveOrUpdateOrDelete(firma);
+                logger.info("\n→→→CRUD_SERVICE: deleted successfully\n\n");
+                return new ResponseEntity<>("SILINDI", HttpStatus.OK);
+            }
+        } catch (Exception e) {
+            logger.error("\n→→→CRUD_SERVICE: error deleting e: {}, e: {}\n\n", e, e);
+            return new ResponseEntity<>("XETA", HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
 }

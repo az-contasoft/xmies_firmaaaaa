@@ -19,25 +19,9 @@ public class DatabaseService {
         this.repoFirma = repoFirma;
     }
 
-    public Firma  insertOrUpdate(Firma firma) throws Exception{
-        logger.info("{}","Firma insert or update for idFirma : " +firma.getIdFirma());
-        Firma firmaForDB;
-        if(firma.getIdFirma()>0){
-            firmaForDB = repoFirma.findByIdFirmaAndIsActive(firma.getIdFirma(),1);
-
-            logger.info("{}","Firma found and trying to update");
-            firmaForDB.setIsActive(firma.getIsActive());
-            firmaForDB.setAddress(firma.getAddress());
-            firmaForDB.setAdi(firma.getAdi());
-            firmaForDB.setTelefon(firma.getTelefon());
-        }else{
-            logger.info("{}","Trying to insert firma");
-            firmaForDB=firma;
-
-        }
-
-        firmaForDB = repoFirma.save(firmaForDB);
-        return firmaForDB;
+    public Firma saveOrUpdateOrDelete(Firma firma) throws Exception{
+        logger.info("{}","Firma insert or update for : " +firma);
+        return repoFirma.save(firma);
     }
 
     public Firma getFirma(long idFirma){

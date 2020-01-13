@@ -26,7 +26,7 @@ public class SearchServiceRedis {
 
     public ResponseEntity<Map<Long, Firma>> getAll() {
         try {
-            Map<Long, Firma> firmaMap = cachService.getAllFirmaMapRedis();
+            Map<Long, Firma> firmaMap = cachService.getMapOfFirma();
             if (firmaMap == null || firmaMap.isEmpty()) {
                 logger.info("\n→→→SEARCH_SERVICE: firma map not found\n\n");
                 return new ResponseEntity<>(null, HttpStatus.NO_CONTENT);
@@ -59,7 +59,7 @@ public class SearchServiceRedis {
 
     public ResponseEntity<List<Firma>> getFirmaByName(RequestText requestText) {
         try {
-            Map<Long, Firma> mapOfFirma = cachService.getAllFirmaMapRedis();
+            Map<Long, Firma> mapOfFirma = cachService.getMapOfFirma();
             String[] enteredText = requestText.getEnteredText().split(" ");
 
             for(String enteredTextmas : enteredText){
@@ -89,7 +89,7 @@ public class SearchServiceRedis {
     }
 
     public ResponseEntity<String> startCaching() {
-        cachService.startCacheForRedis();
+        cachService.startCachingFirma();
         return new ResponseEntity<>("Cached", HttpStatus.OK);
     }
 

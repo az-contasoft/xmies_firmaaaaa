@@ -7,10 +7,7 @@ import az.contasoft.xmies_firma.db.entity.Firma;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/crudServices/redis")
@@ -34,5 +31,12 @@ public class CrudControllerRedis {
     public ResponseEntity<Firma> updateFirma(@RequestBody UpdateFirmaRequest updateFirmaRequest) {
         logger.info("\n→→→CONTROLLER: got updateRequestFirma\n\n");
         return crudServiceRedis.updateFirma(updateFirmaRequest);
+    }
+
+
+    @GetMapping("/delete/{idFirma}")
+    public ResponseEntity<String> deleteFirma(@PathVariable("idFirma") Long idFirma) {
+        logger.info("\n→→→CONTROLLER: got idFirma for deleting\n\n");
+        return crudServiceRedis.deleteFirma(idFirma);
     }
 }
