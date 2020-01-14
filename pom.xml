@@ -5,18 +5,18 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.1.6.RELEASE</version>
+        <version>2.2.1.RELEASE</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>az.contasoft</groupId>
     <artifactId>xmies_firma</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>0.0.3-TOVUZ</version>
     <name>xmies_firma</name>
     <description>firma</description>
 
     <properties>
         <java.version>1.8</java.version>
-        <spring-cloud.version>Greenwich.SR1</spring-cloud.version>
+<!--        <spring-cloud.version>Greenwich.SR1</spring-cloud.version>-->
     </properties>
 
 
@@ -61,13 +61,13 @@
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-sleuth</artifactId>
-            <version>2.1.0.RELEASE</version>
+<!--            <version>2.1.0.RELEASE</version>-->
         </dependency>
 
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
-            <version>2.1.0.RELEASE</version>
+<!--            <version>2.1.0.RELEASE</version>-->
         </dependency>
 
         <dependency>
@@ -85,20 +85,6 @@
             <artifactId>spring-boot-starter-data-redis</artifactId>
         </dependency>
 
-<!--        <dependency>-->
-<!--            <groupId>com.hazelcast</groupId>-->
-<!--            <artifactId>hazelcast</artifactId>-->
-<!--        </dependency>-->
-
-<!--        <dependency>-->
-<!--            <groupId>com.hazelcast</groupId>-->
-<!--            <artifactId>hazelcast-spring</artifactId>-->
-<!--        </dependency>-->
-
-<!--        <dependency>-->
-<!--            <groupId>com.hazelcast</groupId>-->
-<!--            <artifactId>hazelcast-client</artifactId>-->
-<!--        </dependency>-->
     </dependencies>
 
 
@@ -107,20 +93,44 @@
             <dependency>
                 <groupId>org.springframework.cloud</groupId>
                 <artifactId>spring-cloud-dependencies</artifactId>
-                <version>${spring-cloud.version}</version>
+                <version>Hoxton.RELEASE</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
         </dependencies>
     </dependencyManagement>
 
-
     <build>
+        <finalName>xmies_firma</finalName>
         <plugins>
+
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
             </plugin>
+
+            <!-- Docker -->
+            <plugin>
+                <groupId>com.spotify</groupId>
+                <artifactId>dockerfile-maven-plugin</artifactId>
+                <version>1.4.13</version>
+                <executions>
+                    <execution>
+                        <id>default</id>
+                        <phase>install</phase>
+                        <goals>
+                            <goal>build</goal>
+                            <goal>push</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <repository>heisenberg13contasoft/${project.name}</repository>
+                    <tag>${project.version}</tag>
+                    <skipDockerInfo>true</skipDockerInfo>
+                </configuration>
+            </plugin>
+            <!--            ****************************-->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
@@ -129,7 +139,46 @@
                     <testFailureIgnore>true</testFailureIgnore>
                 </configuration>
             </plugin>
+
         </plugins>
     </build>
+
+    <repositories>
+        <repository>
+            <id>spring-snapshots</id>
+            <name>Spring Snapshots</name>
+            <url>https://repo.spring.io/snapshot</url>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </repository>
+        <repository>
+            <id>spring-milestones</id>
+            <name>Spring Milestones</name>
+            <url>https://repo.spring.io/milestone</url>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+    </repositories>
+
+    <pluginRepositories>
+        <pluginRepository>
+            <id>spring-snapshots</id>
+            <name>Spring Snapshots</name>
+            <url>https://repo.spring.io/snapshot</url>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </pluginRepository>
+        <pluginRepository>
+            <id>spring-milestones</id>
+            <name>Spring Milestones</name>
+            <url>https://repo.spring.io/milestone</url>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </pluginRepository>
+    </pluginRepositories>
 
 </project>
